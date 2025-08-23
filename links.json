@@ -1,0 +1,160 @@
+{
+  "categories": [
+    {
+      "name": "AI Writing & Content",
+      "icon": "✍️",
+      "links": [
+        {
+          "title": "ChatGPT",
+          "url": "https://chat.openai.com",
+          "description": "Free AI chat with daily limits"
+        },
+        {
+          "title": "Claude",
+          "url": "https://claude.ai",
+          "description": "Free AI assistant with generous limits"
+        },
+        {
+          "title": "Grammarly",
+          "url": "https://grammarly.com",
+          "description": "Free writing assistant & grammar checker"
+        },
+        {
+          "title": "Notion AI",
+          "url": "https://notion.so",
+          "description": "AI-powered workspace with free trial"
+        }
+      ]
+    },
+    {
+      "name": "AI Design & Images",
+      "icon": "🎨",
+      "links": [
+        {
+          "title": "Canva AI",
+          "url": "https://canva.com",
+          "description": "Free design tool with AI features"
+        },
+        {
+          "title": "DALL-E 2",
+          "url": "https://openai.com/dall-e-2",
+          "description": "AI image generator with free credits"
+        },
+        {
+          "title": "Midjourney",
+          "url": "https://midjourney.com",
+          "description": "AI art generator with free trial"
+        },
+        {
+          "title": "Remove.bg",
+          "url": "https://remove.bg",
+          "description": "Free AI background remover"
+        }
+      ]
+    },
+    {
+      "name": "AI Presentations",
+      "icon": "📊",
+      "links": [
+        {
+          "title": "Gamma",
+          "url": "https://gamma.app",
+          "description": "AI-powered presentation maker"
+        },
+        {
+          "title": "Beautiful.ai",
+          "url": "https://beautiful.ai",
+          "description": "Smart presentation design with free plan"
+        },
+        {
+          "title": "Tome",
+          "url": "https://tome.app",
+          "description": "AI storytelling & presentation tool"
+        },
+        {
+          "title": "Slidesgo AI",
+          "url": "https://slidesgo.com",
+          "description": "Free AI presentation templates"
+        }
+      ]
+    },
+    {
+      "name": "AI Coding & Development",
+      "icon": "💻",
+      "links": [
+        {
+          "title": "GitHub Copilot",
+          "url": "https://github.com/features/copilot",
+          "description": "AI code assistant with free trial"
+        },
+        {
+          "title": "Replit AI",
+          "url": "https://replit.com",
+          "description": "Free AI coding assistant"
+        },
+        {
+          "title": "CodePen AI",
+          "url": "https://codepen.io",
+          "description": "Online code editor with AI features"
+        },
+        {
+          "title": "Tabnine",
+          "url": "https://tabnine.com",
+          "description": "AI code completion with free tier"
+        }
+      ]
+    },
+    {
+      "name": "AI Video & Audio",
+      "icon": "🎬",
+      "links": [
+        {
+          "title": "Loom AI",
+          "url": "https://loom.com",
+          "description": "Screen recording with AI summaries"
+        },
+        {
+          "title": "Descript",
+          "url": "https://descript.com",
+          "description": "AI video editing with free plan"
+        },
+        {
+          "title": "ElevenLabs",
+          "url": "https://elevenlabs.io",
+          "description": "AI voice generator with free credits"
+        },
+        {
+          "title": "Runway ML",
+          "url": "https://runwayml.com",
+          "description": "AI video tools with free trial"
+        }
+      ]
+    },
+    {
+      "name": "AI Productivity",
+      "icon": "⚡",
+      "links": [
+        {
+          "title": "Otter.ai",
+          "url": "https://otter.ai",
+          "description": "Free AI meeting transcription"
+        },
+        {
+          "title": "Calendly AI",
+          "url": "https://calendly.com",
+          "description": "Smart scheduling with free plan"
+        },
+        {
+          "title": "Zapier AI",
+          "url": "https://zapier.com",
+          "description": "Workflow automation with free tier"
+        },
+        {
+          "title": "Perplexity AI",
+          "url": "https://perplexity.ai",
+          "description": "Free AI search & research assistant"
+        }
+      ]
+    }
+  ]
+}
