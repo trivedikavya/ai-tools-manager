@@ -75,6 +75,11 @@
           "title": "Slidesgo AI",
           "url": "https://slidesgo.com",
           "description": "Free AI presentation templates"
+        },
+        {
+          "title": "Napkin",
+          "url": "https://napkin.ai",
+          "description": "AI-powered visual storytelling and presentation tool"
         }
       ]
     },
@@ -153,6 +158,21 @@
           "title": "Perplexity AI",
           "url": "https://perplexity.ai",
           "description": "Free AI search & research assistant"
+        },
+        {
+          "title": "NotebookLM",
+          "url": "https://notebooklm.google.com",
+          "description": "Google's AI research & note-taking tool"
+        },
+        {
+          "title": "Julius AI",
+          "url": "https://julius.ai/chat",
+          "description": "AI data analysis and visualization tool"
+        },
+        {
+          "title": "Genspark AI",
+          "url": "https://www.genspark.ai",
+          "description": "AI-powered search and research assistant"
         }
       ]
     }
