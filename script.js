@@ -163,20 +163,35 @@ function renderContributors(contributors) {
       }</h4>
       ${
         contributor.role
-          ? `<p class="text-blue-600 text-sm font-medium mb-3">${contributor.role}</p>`
+          ? `<p class="text-blue-600 text-sm font-medium mb-2">${contributor.role}</p>`
           : ""
       }
-      <div class="flex justify-center space-x-3 mb-4">
+      ${
+        contributor.tagline
+          ? `<p class="text-gray-600 text-sm mb-4 italic">"${contributor.tagline}"</p>`
+          : ""
+      }
+      <div class="flex justify-center space-x-2 mb-4">
         <a href="https://github.com/${contributor.github}" target="_blank" 
-           class="w-10 h-10 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors"
+           class="w-9 h-9 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors text-sm"
            onclick="trackContributorClick('${contributor.name}')">
           <i class="fab fa-github"></i>
         </a>
         ${
+          contributor.linkedin
+            ? `
+          <a href="https://linkedin.com/in/${contributor.linkedin}" target="_blank" 
+             class="w-9 h-9 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors text-sm">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        `
+            : ""
+        }
+        ${
           contributor.website
             ? `
           <a href="${contributor.website}" target="_blank" 
-             class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+             class="w-9 h-9 bg-purple-600 text-white rounded-lg flex items-center justify-center hover:bg-purple-700 transition-colors text-sm">
             <i class="fas fa-globe"></i>
           </a>
         `
