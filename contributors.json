@@ -31,6 +31,17 @@
         "Classified and described Google AI Studio with clear, developer-focused metadata"
       ],
       "role": "Contributor"
+    },
+    {
+      "name": "Prerna Rawal",
+      "github": "Prerna290",
+      "avatar": "https://github.com/Prerna290.png",
+      "linkedin": "prerna290",
+      "tagline": "Software Developer",
+      "contributions": [
+        "Added new AI Tool AWS Q Developer to the AI Tools Collection"
+      ],
+      "role": "Contributor"
     }
   ]
 }
