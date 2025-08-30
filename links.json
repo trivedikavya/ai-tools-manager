@@ -175,6 +175,17 @@
           "description": "AI-powered search and research assistant"
         }
       ]
+    },
+    {
+      "name": "AI Model Prototyping",
+      "icon": "🧪",
+      "links": [
+        {
+          "title": "Google AI Studio",
+          "url": "https://aistudio.google.com",
+          "description": "Web-based IDE for prototyping with Gemini AI models"
+        }
+      ]
     }
   ]
 }
