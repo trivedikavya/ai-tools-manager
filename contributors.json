@@ -42,6 +42,17 @@
         "Added new AI Tool AWS Q Developer to the AI Tools Collection"
       ],
       "role": "Contributor"
+    },
+    {
+      "name": "Chirag Tankan",
+      "github": "chiragtankan",
+      "avatar": "https://avatars.githubusercontent.com/u/118548447?v=4",
+      "linkedin": "chiragtankan",
+      "tagline": "Organizer Of Meerut Coders",
+      "contributions": [
+        "Added new AI Tool Chess Champ to the AI Game & Strategy"
+      ],
+      "role": "Contributor"
     }
   ]
 }
