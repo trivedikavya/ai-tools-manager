@@ -191,6 +191,17 @@
           "description": "Web-based IDE for prototyping with Gemini AI models"
         }
       ]
+    },
+    {
+      "name": "AI Game & Strategy",
+      "icon": "🎮",
+      "links": [
+        {
+          "title": "Chess Champ",
+          "url": "https://gemini.google.com/gem/chess-champ",
+          "description": "AI tool for playing and analyzing chess games"
+        }
+      ]
     }
   ]
 }
