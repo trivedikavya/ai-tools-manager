@@ -69,12 +69,11 @@
     {
       "name": "Lina Mariam",
       "github": "L-Mariam",
-      "avatar": "https://github.com/your-github-username.png",
+      "avatar": "https://avatars.githubusercontent.com/L-Mariam",
       "linkedin": "linamariam", 
       "tagline": "Software Engineer",
       "contributions": [
-        "Added QuillBot, Scribbr Citation Generator, and Hemingway App under AI Writing & Content",
-        "Added Elicit under AI Study & Research",
+        "Added QuillBot, Scribbr Citation Generator, Hemingway App, Elicit under AI Writing & Content",
         "Added KREA AI, StockImg AI, and Stable Diffusion under AI Design & Images",
         "Added Blackbox under AI Coding & Development",
         "Added Veed, Pika, and Leonardo AI under AI Video & Audio",

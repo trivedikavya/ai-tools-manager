@@ -78,7 +78,7 @@
         {
           "title": "KREA AI",
           "url": "https://krea.ai/",
-          "description": "AI-powered avatar maker"
+          "description": "AI-powered avatar maker and design inspiration"
         },
         {
           "title": "StockImg AI",
@@ -88,7 +88,7 @@
         {
           "title": "Stable Diffusion",
           "url": "https://stablediffusionweb.com/",
-          "description": "AI-powered deep learning model for photo-realistic image generation from text"
+          "description": "Web-based Stable Diffusion interface for photorealistic text-to-image generation"
         }
       ]
     },
@@ -191,17 +191,17 @@
         {
           "title": "Veed",
           "url": "https://veed.io/",
-          "description": "AI-powered video ceation for teams"
+          "description": "AI-powered video creation for teams"
         },
         {
           "title": "Pika",
-          "url": "https://pika.art/login",
+          "url": "https://pika.art/",
           "description": "AI-powered idea-to-video platform with free credits"
         },
         {
           "title": "Leonardo AI",
           "url": "https://leonardo.ai/",
-          "description": "AI art image and video generator with sound"
+          "description": "AI art and image generation platform"
         }
       ]
     },
