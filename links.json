@@ -116,6 +116,11 @@
           "title": "Amazon Q Developer",
           "url": "https://aws.amazon.com/q/developer/",
           "description": "The most capable generative AI–powered assistant for software development"
+        },
+        {
+          "title": "Bolt.new",
+          "url": "https://bolt.new/",
+          "description": "Create stunning apps & websites by chatting with AI."
         }
       ]
     },
