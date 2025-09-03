@@ -89,7 +89,17 @@
           "title": "Stable Diffusion",
           "url": "https://stablediffusionweb.com/",
           "description": "Web-based Stable Diffusion interface for photorealistic text-to-image generation"
-        }
+        },
+{
+          "title": "Nanobanana.ai",
+          "url": "https://nanobanana.ai/",
+          "description": "Transform any image with simple text prompts"
+        },
+      {
+        "title": "Pixlr",
+          "url": "https://pixlr.com/",
+          "description": "Edit photos, generate images, and design freely with Pixlr’s powerful AI tools."
+      }
       ]
     },
     {
