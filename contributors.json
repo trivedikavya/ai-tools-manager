@@ -65,6 +65,21 @@
         "Added new AI Tool 'Banani.co' for Designers"
       ],
       "role": "Contributor"
+    },
+    {
+      "name": "Lina Mariam",
+      "github": "L-Mariam",
+      "avatar": "https://avatars.githubusercontent.com/L-Mariam",
+      "linkedin": "linamariam", 
+      "tagline": "Software Engineer",
+      "contributions": [
+        "Added QuillBot, Scribbr Citation Generator, Hemingway App, Elicit under AI Writing & Content",
+        "Added KREA AI, StockImg AI, and Stable Diffusion under AI Design & Images",
+        "Added Blackbox under AI Coding & Development",
+        "Added Veed, Pika, and Leonardo AI under AI Video & Audio",
+        "Added Taskade under AI Productivity"
+      ],
+      "role": "Contributor"
     }
   ]
 }
