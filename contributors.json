@@ -20,20 +20,6 @@
       "role": "Creator & Maintainer"
     },
     {
-      "name":"B Sai Mahendra",
-      "github":"saimahendra282",
-      "avatar":"https://avatars.githubusercontent.com/u/118994059?v=4",
-      "linkedin":"bejawada-sai-mahendra-b18289212",
-      "tagline":"Studying dual degree at klef",
-      "contributions":[
-        "Added New Feature - Searching and filtering functionality"
-        
-      ],
-      "website":"https://bejawadasaimahendra.vercel.app",
-      "role":"Contributor"
-    },
-
-    {
       "name": "Taranpreet Singh",
       "github": "TARANPREETS1999",
       "avatar": "https://github.com/TARANPREETS1999.png",
@@ -73,18 +59,16 @@
       "github": "dipanshurdev",
       "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQHhNFVZVuxgbw/profile-displayphoto-shrink_100_100/B4EZS86LOWHoAU-/0/1738336155295?e=1759363200&v=beta&t=SVcFQrHVYCaSDRVIAvuJhZQudKRUy6omy7H4v7ddLqk",
       "linkedin": "dipanshurdev",
-       "website": "https://dipanshurdev.netlify.app",
+      "website": "https://dipanshurdev.netlify.app",
       "tagline": "I write code",
-      "contributions": [
-        "Added new AI Tool 'Banani.co' for Designers"
-      ],
+      "contributions": ["Added new AI Tool 'Banani.co' for Designers"],
       "role": "Contributor"
     },
     {
       "name": "Lina Mariam",
       "github": "L-Mariam",
       "avatar": "https://avatars.githubusercontent.com/L-Mariam",
-      "linkedin": "linamariam", 
+      "linkedin": "linamariam",
       "tagline": "Software Engineer",
       "contributions": [
         "Added QuillBot, Scribbr Citation Generator, Hemingway App, Elicit under AI Writing & Content",
@@ -93,6 +77,18 @@
         "Added Veed, Pika, and Leonardo AI under AI Video & Audio",
         "Added Taskade under AI Productivity"
       ],
+      "role": "Contributor"
+    },
+    {
+      "name": "B Sai Mahendra",
+      "github": "saimahendra282",
+      "avatar": "https://avatars.githubusercontent.com/u/118994059?v=4",
+      "linkedin": "bejawada-sai-mahendra-b18289212",
+      "tagline": "Studying dual degree at klef",
+      "contributions": [
+        "Added New Feature - Searching and filtering functionality"
+      ],
+      "website": "https://bejawadasaimahendra.vercel.app",
       "role": "Contributor"
     }
   ]
