@@ -90,6 +90,15 @@
       ],
       "website": "https://bejawadasaimahendra.vercel.app",
       "role": "Contributor"
-    }
+    },
+    {
+  "name": "Simranpreet Kaur",
+  "github": "ksimran-935",
+  "avatar": "https://github.com/ksimran-935.png",
+  "linkedin": "https://www.linkedin.com/in/simranpreet-kaur-a713552aa/",
+  "tagline": "Learning and Growing",
+  "contributions": ["Added Perplexity AI Under AI Writing & Content","Added Deepseek under AI Coding and Development", "Added animated hover effects to footer links."],
+  "role": "Contributor"
+}
   ]
 }
