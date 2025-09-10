@@ -233,11 +233,6 @@
           "description": "Generate real-time full-stack apps with backend support"
         },
         {
-          "title": "Gemini",
-          "url": "https://gemini.google.com/",
-          "description": "AI assistant for coding, brainstorming, and project planning"
-        },
-        {
           "title": "Cursor AI IDE",
           "url": "https://cursor.sh",
           "description": "AI-first code editor with free features for real-time coding assistance"
@@ -351,7 +346,7 @@
           "description": "Interactive tutorials and workflow documentation made easy"
         },
         {
-          "title": "Snippo",
+          "title": "Snipo",
           "url": "https://snipo.io/",
           "description": "Productivity enhancement for Notion with snippets and AI suggestions"
         },
@@ -359,11 +354,6 @@
           "title": "Grok",
           "url": "https://grok.x.ai/",
           "description": "AI assistant for research, summarization, and productivity enhancement"
-        },
-        {
-          "title": "Gemini CLI",
-          "url": "https://github.com/google-gemini/gemini-cli",
-          "description": "Use Gemini AI directly from the terminal for coding, content, and tasks"
         },
         {
           "title": "Leiga AI SMART Tools",
