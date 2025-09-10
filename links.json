@@ -203,11 +203,6 @@
           "description": "AI-powered full-stack development environment for building and managing apps"
         },
         {
-          "title": "Jules",
-          "url": "https://jules.google.com/",
-          "description": "AI coding assistant for GitHub repositories"
-        },
-        {
           "title": "Kiro",
           "url": "https://kiro.dev/",
           "description": "AI IDE for prototype-to-production, spec-driven development"
