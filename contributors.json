@@ -106,10 +106,21 @@
       "name": "Manjunath L",
       "github": "Manjunath-L",
       "avatar": "https://github.com/Manjunath-L.png",
-      "linkedin": "https://www.linkedin.com/in/manjunath-l-web/",
+      "linkedin": "manjunath-l-web",
       "tagline": "Aspiring Software Engineer & Open Source Contributor",
       "contributions": [
         "Added Local LLM tools category to AI Tools Collection"
+      ],
+      "role": "Contributor"
+    },
+     {
+      "name": "Fleming John",
+      "github": "FlemingJohn",
+      "avatar": "https://github.com/FlemingJohn.png",
+      "linkedin": "https://www.linkedin.com/in/fleming-john-0b4ab3263/",
+      "tagline": "Software Engineer",
+      "contributions": [
+        "Contributed 16 AI Tools to the AI Tools Collection"
       ],
       "role": "Contributor"
     }
