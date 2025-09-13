@@ -30,8 +30,8 @@ We welcome contributions from everyone! Here's how you can help improve this pro
 2. **Clone your fork locally**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/ai-tools-collection.git
-   cd ai-tools-collection
+   git clone https://github.com/YOUR_USERNAME/ai-tools-manager.git
+   cd ai-tools-manager
    ```
 
 3. **Add your tool to `links.json`**
@@ -79,7 +79,7 @@ When you contribute, add yourself to the contributors list:
 ## 📁 Project Structure
 
 ```
-ai-tools-collection/
+ai-tools-manager/
 ├── index.html          # Main HTML file
 ├── style.css           # Styling and animations
 ├── script.js           # JavaScript functionality
@@ -95,8 +95,8 @@ ai-tools-collection/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/ArshdeepGrover/ai-tools-collection.git
-   cd ai-tools-collection
+   git clone https://github.com/ArshdeepGrover/ai-tools-manager.git
+   cd ai-tools-manager
    ```
 
 2. **Open in your browser**
@@ -190,8 +190,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact & Support
 
-- **Issues**: [GitHub Issues](https://github.com/ArshdeepGrover/ai-tools-collection/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ArshdeepGrover/ai-tools-collection/discussions)
+- **Issues**: [GitHub Issues](https://github.com/ArshdeepGrover/ai-tools-manager/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ArshdeepGrover/ai-tools-manager/discussions)
 - **Creator**: [Arshdeep Singh](https://arshdeepsingh.info)
 
 ---
