@@ -45,6 +45,11 @@
           "description": "AI-powered research assistant"
         },
         {
+          "title": "Perplexity AI",
+          "url": "https://www.perplexity.ai/",
+          "description": "AI-powered research assistant"
+        },
+        {
           "title": "Copy.ai",
           "url": "https://www.copy.ai/tools",
           "description": "Free AI Writing Generators"
@@ -185,7 +190,12 @@
         {
           "title": "Blackbox",
           "url": "https://blackbox.ai/",
-          "description": "Free code search & snippet extraction"
+          "description": "Free code search & snippet extraction."
+        },
+        {
+          "title": "Deepseek",
+          "url": "https://www.deepseek.com/en",
+          "description": "Free AI for code generation."
         },
         {
           "title": "CodiumAI",
