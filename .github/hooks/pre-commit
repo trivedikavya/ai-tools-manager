@@ -1,0 +1,35 @@
+#!/bin/sh
+# Pre-commit hook to check for duplicate links (production branch only)
+
+# Get current branch name
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+echo "🔍 Current branch: $BRANCH"
+
+# Only run duplicate check on production branch
+if [ "$BRANCH" != "production" ]; then
+    echo "📄 Not on production branch, skipping duplicate check."
+    echo "🚀 Pre-commit checks passed!"
+    exit 0
+fi
+
+echo "🔍 Production branch detected - checking for duplicate links..."
+
+# Check if links.json has been modified
+if git diff --cached --name-only | grep -q "links.json"; then
+    echo "📝 links.json modified, checking for duplicates..."
+    
+    # Run the duplicate check
+    if node validate-links.js --duplicates-only; then
+        echo "✅ No duplicates found!"
+    else
+        echo "❌ Duplicate links found!"
+        echo "Please remove duplicates and try again."
+        echo "Run 'node validate-links.js --duplicates-only' to see details."
+        exit 1
+    fi
+else
+    echo "📄 links.json not modified, skipping check."
+fi
+
+echo "🚀 Pre-commit checks passed!"
