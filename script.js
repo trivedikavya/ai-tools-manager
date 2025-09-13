@@ -311,4 +311,93 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load content
   loadLinks();
   loadContributors();
+  loadGitHubStars();
 });
+
+// GitHub Stars functionality
+async function loadGitHubStars() {
+  try {
+    const response = await fetch(
+      "https://api.github.com/repos/ArshdeepGrover/ai-tools-manager"
+    );
+    const data = await response.json();
+    const starCount = data.stargazers_count;
+    const forkCount = data.forks_count;
+
+    // Update all GitHub star buttons
+    updateGitHubButtons(starCount);
+
+    // Update footer stats
+    updateFooterStats(starCount, forkCount);
+  } catch (error) {
+    console.error("Error fetching GitHub stats:", error);
+    // Fallback - just show the buttons without star count
+  }
+}
+
+function updateGitHubButtons(starCount) {
+  // Update navigation GitHub button
+  const navStarCount = document.getElementById("nav-star-count");
+  if (navStarCount) {
+    navStarCount.innerHTML = `<i class="fas fa-star mr-1"></i>${starCount}`;
+    navStarCount.classList.remove("hidden");
+    navStarCount.classList.add("star-count-appear");
+  }
+
+  // Update hero section GitHub button
+  const heroStarCount = document.getElementById("hero-star-count");
+  if (heroStarCount) {
+    heroStarCount.innerHTML = `<i class="fas fa-star mr-1"></i>${starCount}`;
+    heroStarCount.classList.remove("hidden");
+    heroStarCount.classList.add("star-count-appear");
+  }
+
+  // Update contributors section GitHub button
+  const contributorsStarCount = document.getElementById(
+    "contributors-star-count"
+  );
+  if (contributorsStarCount) {
+    contributorsStarCount.innerHTML = `<i class="fas fa-star mr-1"></i>${starCount}`;
+    contributorsStarCount.classList.remove("hidden");
+    contributorsStarCount.classList.add("star-count-appear");
+  }
+
+  // Track GitHub stars loaded
+  if (typeof gtag !== "undefined") {
+    gtag("event", "github_stars_loaded", {
+      star_count: starCount,
+      event_category: "engagement",
+    });
+  }
+}
+
+function updateFooterStats(starCount, forkCount) {
+  // Update footer star count
+  const footerStarCount = document.getElementById("footer-star-count");
+  if (footerStarCount) {
+    footerStarCount.textContent = starCount;
+    footerStarCount.classList.add("animate-pulse");
+    setTimeout(() => {
+      footerStarCount.classList.remove("animate-pulse");
+    }, 1000);
+  }
+
+  // Update footer fork count
+  const footerForkCount = document.getElementById("footer-fork-count");
+  if (footerForkCount) {
+    footerForkCount.textContent = forkCount;
+    footerForkCount.classList.add("animate-pulse");
+    setTimeout(() => {
+      footerForkCount.classList.remove("animate-pulse");
+    }, 1000);
+  }
+
+  // Track GitHub stats loaded
+  if (typeof gtag !== "undefined") {
+    gtag("event", "github_stats_loaded", {
+      star_count: starCount,
+      fork_count: forkCount,
+      event_category: "engagement",
+    });
+  }
+}
