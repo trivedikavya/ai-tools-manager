@@ -92,13 +92,46 @@
       "role": "Contributor"
     },
     {
-  "name": "Simranpreet Kaur",
-  "github": "ksimran-935",
-  "avatar": "https://github.com/ksimran-935.png",
-  "linkedin": "https://www.linkedin.com/in/simranpreet-kaur-a713552aa/",
-  "tagline": "Learning and Growing",
-  "contributions": ["Added Perplexity AI Under AI Writing & Content","Added Deepseek under AI Coding and Development", "Added animated hover effects to footer links."],
-  "role": "Contributor"
-}
+      "name": "Siddarthan N",
+      "github": "Siddarthan999",
+      "avatar": "https://avatars.githubusercontent.com/u/91734840?v=4",
+      "linkedin": "siddarthan-n-118635224",
+      "tagline": "Software Engineer",
+      "contributions": [
+        "Added CodiumAI and V0 by Vercel under AI Coding & Development"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Manjunath L",
+      "github": "Manjunath-L",
+      "avatar": "https://github.com/Manjunath-L.png",
+      "linkedin": "manjunath-l-web",
+      "tagline": "Aspiring Software Engineer & Open Source Contributor",
+      "contributions": [
+        "Added Local LLM tools category to AI Tools Collection"
+      ],
+      "role": "Contributor"
+    },
+     {
+      "name": "Fleming John",
+      "github": "FlemingJohn",
+      "avatar": "https://github.com/FlemingJohn.png",
+      "linkedin": "https://www.linkedin.com/in/fleming-john-0b4ab3263/",
+      "tagline": "Software Engineer",
+      "contributions": [
+        "Contributed 16 AI Tools to the AI Tools Collection"
+      ],
+      "role": "Contributor"
+    },
+    {
+      "name": "Simranpreet Kaur",
+      "github": "ksimran-935",
+      "avatar": "https://github.com/ksimran-935.png",
+      "linkedin": "https://www.linkedin.com/in/simranpreet-kaur-a713552aa/",
+      "tagline": "Learning and Growing",
+      "contributions": ["Added Perplexity AI Under AI Writing & Content","Added Deepseek under AI Coding and Development", "Added animated hover effects to footer links."],
+      "role": "Contributor"
+    }
   ]
 }

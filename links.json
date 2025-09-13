@@ -21,7 +21,7 @@
         },
         {
           "title": "Notion AI",
-          "url": "https://notion.so",
+          "url": "https://notion.so/product/ai",
           "description": "AI-powered workspace with free trial"
         },
         {
@@ -48,7 +48,17 @@
           "title": "Perplexity AI",
           "url": "https://www.perplexity.ai/",
           "description": "AI-powered research assistant"
-        }      
+        },
+        {
+          "title": "Copy.ai",
+          "url": "https://www.copy.ai/tools",
+          "description": "Free AI Writing Generators"
+        },
+        {
+          "title": "Askify",
+          "url": "https://askify.video/",
+          "description": "AI-powered Q&A and knowledge base assistant"
+        }
       ]
     },
     {
@@ -95,16 +105,21 @@
           "url": "https://stablediffusionweb.com/",
           "description": "Web-based Stable Diffusion interface for photorealistic text-to-image generation"
         },
-{
+        {
           "title": "Nanobanana.ai",
           "url": "https://nanobanana.ai/",
           "description": "Transform any image with simple text prompts"
         },
-      {
-        "title": "Pixlr",
+        {
+          "title": "Pixlr",
           "url": "https://pixlr.com/",
           "description": "Edit photos, generate images, and design freely with Pixlr’s powerful AI tools."
-      }
+        },
+        {
+          "title": "Stitch",
+          "url": "https://stitch.withgoogle.com",
+          "description": "AI-powered UI/UX design tool for creating intuitive interfaces"
+        }
       ]
     },
     {
@@ -165,7 +180,7 @@
         {
           "title": "Amazon Q Developer",
           "url": "https://aws.amazon.com/q/developer/",
-          "description": "The most capable generative AI–powered assistant for software development"
+          "description": "Generative AI-powered assistant for software development"
         },
         {
           "title": "Bolt.new",
@@ -181,7 +196,53 @@
           "title": "Deepseek",
           "url": "https://www.deepseek.com/en",
           "description": "Free AI for code generation."
+        },
+        {
+          "title": "CodiumAI",
+          "url": "https://codium.ai/",
+          "description": "AI-powered code review and test generation"
+        },
+        {
+          "title": "V0 by Vercel",
+          "url": "https://v0.dev/",
+          "description": "Build full-stack apps with AI assistance"
+        },
+        {
+          "title": "Firebase Studio",
+          "url": "https://firebase.studio/",
+          "description": "AI-powered full-stack development environment for building and managing apps"
+        },
+        {
+          "title": "Kiro",
+          "url": "https://kiro.dev/",
+          "description": "AI IDE for prototype-to-production, spec-driven development"
+        },
+        {
+          "title": "Lovable",
+          "url": "https://lovable.dev/",
+          "description": "Build apps and websites by chatting with AI"
+        },
+        {
+          "title": "CodeRabbit",
+          "url": "https://coderabbit.ai/",
+          "description": "AI code reviews and suggestions directly in your editor"
+        },
+        {
+          "title": "Trae",
+          "url": "https://www.trae.ai/",
+          "description": "AI engineer that helps build software solutions independently"
+        },
+        {
+          "title": "Chef by Convex",
+          "url": "https://chef.convex.dev/",
+          "description": "Generate real-time full-stack apps with backend support"
+        },
+        {
+          "title": "Cursor AI IDE",
+          "url": "https://cursor.sh",
+          "description": "AI-first code editor with free features for real-time coding assistance"
         }
+
       ]
     },
     {
@@ -224,9 +285,14 @@
           "description": "AI art and image generation platform"
         },
         {
-          "title": "Vmaker AI/",
+          "title": "Vmaker AI",
           "url": "https://www.vmaker.com/",
-          "description": "The fastest way to generate videos from text, voice, or documents and edit them to perfection with AI."
+          "description": "Generate videos from text, voice, or docs and edit with AI"
+        },
+        {
+          "title": "Flow",
+          "url": "https://labs.google/flow",
+          "description": "AI platform for editing and producing video content"
         }
       ]
     },
@@ -273,6 +339,42 @@
           "title": "Taskade",
           "url": "https://taskade.com/",
           "description": "AI to-do lists, outlines, and workflows"
+        },
+        {
+          "title": "Tango",
+          "url": "https://tango.us/",
+          "description": "Create step-by-step guides and automate workflows with AI"
+        },
+        {
+          "title": "Iorad",
+          "url": "https://www.iorad.com/",
+          "description": "Interactive tutorials and workflow documentation made easy"
+        },
+        {
+          "title": "Snipo",
+          "url": "https://snipo.io/",
+          "description": "Productivity enhancement for Notion with snippets and AI suggestions"
+        },
+        {
+          "title": "Grok",
+          "url": "https://grok.x.ai/",
+          "description": "AI assistant for research, summarization, and productivity enhancement"
+        },
+        {
+          "title": "Leiga AI SMART Tools",
+          "url": "https://www.leiga.com/free-tools",
+          "description": "100% free AI tools for tasks like SMART goals, to-do lists, and prompts"
+        }
+      ]
+    },
+    {
+      "name": "AI Entertainment",
+      "icon": "😂",
+      "links": [
+        {
+          "title": "Super Meme",
+          "url": "https://supermeme.ai/",
+          "description": "Quickly create memes using AI-generated content"
         }
       ]
     },
@@ -295,6 +397,42 @@
           "title": "Chess Champ",
           "url": "https://gemini.google.com/gem/chess-champ",
           "description": "AI tool for playing and analyzing chess games"
+        }
+      ]
+    },
+    {
+      "name": "AI Local Models",
+      "icon": "🖥️",
+      "links": [
+        {
+          "title": "GPT4All",
+          "url": "https://gpt4all.io/",
+          "description": "Run open-source LLMs locally on your computer"
+        },
+        {
+          "title": "Ollama",
+          "url": "https://ollama.ai/",
+          "description": "Simple way to run and manage LLMs locally"
+        },
+        {
+          "title": "LM Studio",
+          "url": "https://lmstudio.ai/",
+          "description": "Desktop app to run and chat with local models"
+        },
+        {
+          "title": "Llama.cpp",
+          "url": "https://github.com/ggerganov/llama.cpp",
+          "description": "Local inference of LLaMA models on CPU/GPU"
+        },
+        {
+          "title": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "description": "Toolkit to run and connect many local LLMs"
+        },
+        {
+          "title": "Jan",
+          "url": "https://jan.ai/",
+          "description": "Open-source local ChatGPT alternative"
         }
       ]
     }

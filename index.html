@@ -12,7 +12,7 @@
     />
     <meta
       name="description"
-      content="Discover 28+ best free AI tools for professionals. Curated collection of AI tools for writing, design, coding, productivity & more. Open source & community-driven directory."
+      content="Discover 100+ best free AI tools for professionals. Curated collection of AI tools for writing, design, coding, productivity & more. Open source & community-driven directory."
     />
     <meta
       name="keywords"
@@ -32,7 +32,7 @@
     />
     <meta
       property="og:description"
-      content="Discover 28+ best free AI tools for professionals. Curated collection of AI tools for writing, design, coding, productivity & more. Open source & community-driven."
+      content="Discover 100+ best free AI tools for professionals. Curated collection of AI tools for writing, design, coding, productivity & more. Open source & community-driven."
     />
     <meta
       property="og:image"
@@ -86,23 +86,6 @@
 
     <!-- Favicon and Icons -->
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon-16x16.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/apple-touch-icon.png"
-    />
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Structured Data -->
@@ -135,7 +118,7 @@
           "@type": "ItemList",
           "name": "AI Tools Collection",
           "description": "Curated list of professional AI tools",
-          "numberOfItems": "28+"
+          "numberOfItems": "100+"
         }
       }
     </script>
@@ -233,6 +216,62 @@
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
           0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
+
+      /* Star Count Styling */
+      .star-count {
+        background: linear-gradient(45deg, #fbbf24, #f59e0b, #d97706);
+        background-size: 200% 200%;
+        animation: gradientShift 3s ease infinite;
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .star-count:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(251, 191, 36, 0.6);
+      }
+
+      .star-count i {
+        animation: starTwinkle 2s ease-in-out infinite;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes starTwinkle {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.2);
+        }
+      }
+
+      @keyframes starPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .star-count-appear {
+        animation: starPulse 0.6s ease-out;
+      }
     </style>
   </head>
   <body class="bg-gray-50 font-sans">
@@ -283,9 +322,15 @@
               href="https://github.com/ArshdeepGrover/ai-tools-manager"
               target="_blank"
               class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center space-x-2"
+              id="nav-github-button"
             >
               <i class="fab fa-github"></i>
               <span class="hidden sm:inline">Star on GitHub</span>
+              <span
+                class="star-count text-white px-3 py-1 rounded-full text-xs font-bold ml-2 hidden"
+                id="nav-star-count"
+                ><i class="fas fa-star mr-1"></i>0</span
+              >
             </a>
 
             <!-- Mobile Menu Button -->
@@ -374,7 +419,8 @@
             <a
               href="https://github.com/ArshdeepGrover/ai-tools-manager"
               target="_blank"
-              class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center space-x-2"
+              id="hero-github-button"
             >
               Contribute
             </a>
@@ -466,6 +512,7 @@
             href="https://github.com/ArshdeepGrover/ai-tools-manager"
             target="_blank"
             class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center space-x-2"
+            id="contributors-github-button"
           >
             <i class="fab fa-github"></i>
             <span>Contribute on GitHub</span>
@@ -631,27 +678,27 @@
           </div>
 
           <div>
-            <h4 class="font-semibold mb-4 relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Quick Links</h4>
-            <ul class="space-y-2 text-gray-400 ">
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400">
               <li>
-                <a href="#tools" class="hover:text-white transition-colors relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                <a href="#tools" class="hover:text-white transition-colors"
                   >Browse Tools</a
                 >
               </li>
               <li>
-                <a href="#categories" class="hover:text-white transition-colors relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                <a href="#categories" class="hover:text-white transition-colors"
                   >Categories</a
                 >
               </li>
               <li>
                 <a
                   href="#contributors"
-                  class="hover:text-white transition-colors relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                  class="hover:text-white transition-colors"
                   >Contributors</a
                 >
               </li>
               <li>
-                <a href="#about" class="hover:text-white transition-colors relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                <a href="#about" class="hover:text-white transition-colors"
                   >About</a
                 >
               </li>
@@ -659,13 +706,13 @@
           </div>
 
           <div>
-            <h4 class="font-semibold mb-4 relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full">Community</h4>
+            <h4 class="font-semibold mb-4">Community</h4>
             <ul class="space-y-2 text-gray-400">
               <li>
                 <a
                   href="https://github.com/ArshdeepGrover/ai-tools-manager"
                   target="_blank"
-                  class="hover:text-white transition-colors relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                  class="hover:text-white transition-colors"
                   >GitHub</a
                 >
               </li>
@@ -673,7 +720,7 @@
                 <a
                   href="https://github.com/ArshdeepGrover/ai-tools-manager/issues"
                   target="_blank"
-                  class="hover:text-white transition-colors relative inline-block after:content-[''] after:block after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                  class="hover:text-white transition-colors"
                   >Report Issues</a
                 >
               </li>
@@ -681,13 +728,26 @@
           </div>
         </div>
 
-        <div
-          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 "
-        >
-          <p>
-            &copy; 2025 AI Tools Hub. Open source project by Arshdeep Singh. MIT
-            License.
-          </p>
+        <!-- GitHub Stats -->
+        <div class="border-t border-gray-800 mt-8 pt-8">
+          <div class="flex justify-center items-center space-x-8 mb-6">
+            <div class="flex items-center space-x-2 text-gray-400">
+              <i class="fas fa-star text-yellow-400"></i>
+              <span class="text-sm">Stars:</span>
+              <span class="font-bold text-white" id="footer-star-count">-</span>
+            </div>
+            <div class="flex items-center space-x-2 text-gray-400">
+              <i class="fas fa-code-branch text-blue-400"></i>
+              <span class="text-sm">Forks:</span>
+              <span class="font-bold text-white" id="footer-fork-count">-</span>
+            </div>
+          </div>
+          <div class="text-center text-gray-400">
+            <p>
+              &copy; 2025 AI Tools Hub. Open source project by Arshdeep Singh.
+              MIT License.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
