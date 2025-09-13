@@ -38,54 +38,123 @@ function checkReachability(url) {
 }
 
 async function validateLinks() {
+  console.log("🔍 AI Tools Links Validation");
+  console.log("=".repeat(50));
+
   const data = JSON.parse(fs.readFileSync("links.json", "utf8"));
   const allTitles = new Map();
   const allUrls = new Map();
   let hasError = false;
+  let warningCount = 0;
+  let totalLinks = 0;
+  let unreachableCount = 0;
+  let unstableCount = 0;
+
+  // Count total links
+  for (const category of data.categories) {
+    if (category.links && Array.isArray(category.links)) {
+      totalLinks += category.links.length;
+    }
+  }
+
+  console.log(`📊 OVERVIEW:`);
+  console.log(`   Categories: ${data.categories.length}`);
+  console.log(`   Total links: ${totalLinks}\n`);
+
+  console.log("🔍 CHECKING FOR DUPLICATES:");
+  console.log("-".repeat(30));
 
   for (const category of data.categories) {
+    console.log(`\n📁 ${category.name} (${category.links.length} links)`);
+
     for (const link of category.links) {
-      // Unstable URL check
-      if (isUnstable(link.url)) {
-        console.warn(`Warning: Unstable URL detected: ${link.url}`);
-      }
       // Duplicate title check
       if (allTitles.has(link.title)) {
-        console.error(
-          `Duplicate title found: ${link.title} in categories "${allTitles.get(
-            link.title
-          )}" and "${category.name}"`
-        );
+        console.error(`   ❌ DUPLICATE TITLE: "${link.title}"`);
+        console.error(`      First found in: "${allTitles.get(link.title)}"`);
+        console.error(`      Duplicate in: "${category.name}"`);
         hasError = true;
       } else {
         allTitles.set(link.title, category.name);
       }
+
       // Duplicate URL check
       if (allUrls.has(link.url)) {
-        console.error(
-          `Duplicate URL found: ${link.url} in titles "${allUrls.get(
-            link.url
-          )}" and "${link.title}"`
-        );
+        console.error(`   ❌ DUPLICATE URL: ${link.url}`);
+        console.error(`      First used by: "${allUrls.get(link.url)}"`);
+        console.error(`      Duplicate in: "${link.title}"`);
         hasError = true;
       } else {
         allUrls.set(link.url, link.title);
       }
+
+      // Unstable URL check
+      if (isUnstable(link.url)) {
+        console.warn(`   ⚠️  UNSTABLE: "${link.title}"`);
+        console.warn(`      URL: ${link.url}`);
+        console.warn(
+          `      (Experimental/beta service - may become unavailable)`
+        );
+        unstableCount++;
+        warningCount++;
+      }
     }
   }
 
-  // Reachability check (async)
+  // URL Reachability check
+  console.log(`\n🌐 CHECKING URL REACHABILITY:`);
+  console.log("-".repeat(30));
+  console.log(`Testing ${allUrls.size} unique URLs...\n`);
+
+  let checked = 0;
   for (const [url, title] of allUrls.entries()) {
     const reachable = await checkReachability(url);
+    checked++;
+
     if (!reachable) {
-      console.warn(`Warning: URL not reachable: ${url} (title: ${title})`);
+      console.warn(`   ⚠️  UNREACHABLE: "${title}"`);
+      console.warn(`      URL: ${url}`);
+      console.warn(`      (May be temporarily down or blocked)\n`);
+      unreachableCount++;
+      warningCount++;
+    }
+
+    // Progress indicator
+    if (checked % 10 === 0 || checked === allUrls.size) {
+      console.log(`   Progress: ${checked}/${allUrls.size} URLs tested`);
+    }
+  }
+
+  // Final Results
+  console.log("\n" + "=".repeat(50));
+  console.log("📋 VALIDATION RESULTS:");
+  console.log("=".repeat(50));
+  console.log(`✅ Categories processed: ${data.categories.length}`);
+  console.log(`✅ Total links validated: ${totalLinks}`);
+  console.log(`✅ Unique links: ${allUrls.size}`);
+
+  if (warningCount > 0) {
+    console.log(`\n⚠️  WARNINGS (${warningCount} total):`);
+    if (unstableCount > 0) {
+      console.log(`   • ${unstableCount} unstable domains`);
+    }
+    if (unreachableCount > 0) {
+      console.log(`   • ${unreachableCount} unreachable URLs`);
     }
   }
 
   if (hasError) {
+    console.log(`\n❌ VALIDATION FAILED!`);
+    console.log(`   Critical errors found - duplicates must be fixed.`);
     process.exit(1);
+  } else if (warningCount > 0) {
+    console.log(`\n✅ VALIDATION PASSED WITH WARNINGS`);
+    console.log(
+      `   No critical errors, but ${warningCount} warnings to review.`
+    );
   } else {
-    console.log("Validation complete. No critical errors found.");
+    console.log(`\n🎉 VALIDATION PASSED PERFECTLY!`);
+    console.log(`   No errors or warnings found!`);
   }
 }
 
