@@ -4,7 +4,7 @@
       "name": "Arshdeep Singh",
       "github": "ArshdeepGrover",
       "avatar": "https://www.arshdeepsingh.info/images/arshdeep-singh.png",
-      "linkedin": "https://www.linkedin.com/in/arshdeepgrover/",
+      "linkedin": "ArshdeepGrover",
       "tagline": "AI Tools Curator",
       "contributions": [
         "Created the initial AI Tools Collection project",
@@ -113,24 +113,26 @@
       ],
       "role": "Contributor"
     },
-     {
+    {
       "name": "Fleming John",
       "github": "FlemingJohn",
       "avatar": "https://github.com/FlemingJohn.png",
-      "linkedin": "https://www.linkedin.com/in/fleming-john-0b4ab3263/",
+      "linkedin": "fleming-john-0b4ab3263",
       "tagline": "Software Engineer",
-      "contributions": [
-        "Contributed 16 AI Tools to the AI Tools Collection"
-      ],
+      "contributions": ["Contributed 16 AI Tools to the AI Tools Collection"],
       "role": "Contributor"
     },
     {
       "name": "Simranpreet Kaur",
       "github": "ksimran-935",
       "avatar": "https://github.com/ksimran-935.png",
-      "linkedin": "https://www.linkedin.com/in/simranpreet-kaur-a713552aa/",
+      "linkedin": "simranpreet-kaur-a713552aa",
       "tagline": "Learning and Growing",
-      "contributions": ["Added Perplexity AI Under AI Writing & Content","Added Deepseek under AI Coding and Development", "Added animated hover effects to footer links."],
+      "contributions": [
+        "Added Perplexity AI Under AI Writing & Content",
+        "Added Deepseek under AI Coding and Development",
+        "Added animated hover effects to footer links."
+      ],
       "role": "Contributor"
     }
   ]
