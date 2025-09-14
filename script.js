@@ -7,8 +7,8 @@ async function loadLinks() {
     const response = await fetch("links.json");
     const data = await response.json();
     allCategories = data.categories;
-  renderCategoryFilters(allCategories); // populate dropdown
-  applyFilters(); // initial render using combined filters
+    renderCategoryFilters(allCategories); // populate dropdown
+    applyFilters(); // initial render using combined filters
     updateStats(allCategories);
   } catch (error) {
     console.error("Error loading links:", error);
@@ -32,10 +32,12 @@ function renderCategoryFilters(categories) {
   const select = document.getElementById("category-select");
   if (!select) return;
   const total = categories.reduce((sum, cat) => sum + cat.links.length, 0);
-  select.innerHTML = `<option value="all">🎯 All Categories (${total})</option>` +
+  select.innerHTML =
+    `<option value="all">🎯 All Categories (${total})</option>` +
     categories
       .map(
-        (category) => `<option value="${category.name}">${category.icon} ${category.name} (${category.links.length})</option>`
+        (category) =>
+          `<option value="${category.name}">${category.icon} ${category.name} (${category.links.length})</option>`
       )
       .join("");
 }
@@ -162,58 +164,83 @@ function renderLinks(categories) {
 }
 
 function renderContributors(contributors) {
-  const contributorsGrid = document.getElementById("contributors-grid");
+  // Update total contributors count
+  const totalContributorsText = document.getElementById(
+    "total-contributors-text"
+  );
+  if (totalContributorsText) {
+    totalContributorsText.textContent = contributors.length;
+  }
 
-  contributorsGrid.innerHTML = contributors
-    .map(
-      (contributor) => `
-    <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 text-center card-hover">
-      <img src="${contributor.avatar}" alt="${contributor.name}" 
-           class="w-20 h-20 rounded-full mx-auto mb-4 object-cover border-4 border-gray-100" />
-      <h4 class="text-lg font-semibold text-gray-900 mb-1">${
-        contributor.name
-      }</h4>
-      ${
-        contributor.role
-          ? `<p class="text-blue-600 text-sm font-medium mb-2">${contributor.role}</p>`
-          : ""
-      }
-      ${
-        contributor.tagline
-          ? `<p class="text-gray-600 text-sm mb-4 italic">"${contributor.tagline}"</p>`
-          : ""
-      }
-      <div class="flex justify-center space-x-2 mb-4">
-        <a href="https://github.com/${contributor.github}" target="_blank" 
-           class="w-9 h-9 bg-gray-900 text-white rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors text-sm"
-           onclick="trackContributorClick('${contributor.name}')">
-          <i class="fab fa-github"></i>
-        </a>
-        ${
-          contributor.linkedin
-            ? `
-          <a href="https://linkedin.com/in/${contributor.linkedin}" target="_blank" 
-             class="w-9 h-9 bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors text-sm">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        `
-            : ""
-        }
-        ${
-          contributor.website
-            ? `
-          <a href="${contributor.website}" target="_blank" 
-             class="w-9 h-9 bg-purple-600 text-white rounded-lg flex items-center justify-center hover:bg-purple-700 transition-colors text-sm">
-            <i class="fas fa-globe"></i>
-          </a>
-        `
-            : ""
-        }
-      </div>
-    </div>
-  `
-    )
-    .join("");
+  // Render Modern Grid
+  const modernGrid = document.getElementById("contributors-modern-grid");
+  if (modernGrid) {
+    modernGrid.innerHTML = contributors
+      .map((contributor, index) => {
+        const isCreator = contributor.role === "Creator & Maintainer";
+        const contributionCount = contributor.contributions
+          ? contributor.contributions.length
+          : 0;
+
+        return `
+          <div class="contributor-card-modern" 
+               style="animation-delay: ${index * 0.1}s">
+            <div>
+              <div class="flex items-center space-x-3 mb-3">
+                <img src="${contributor.avatar}" alt="${contributor.name}" 
+                     class="contributor-avatar-modern flex-shrink-0" />
+                <div class="contributor-info flex-1 min-w-0">
+                  <h4 class="font-semibold text-gray-900 text-base mb-1 truncate">${
+                    contributor.name
+                  }</h4>
+                  ${
+                    contributor.role
+                      ? `<p class="text-blue-600 text-sm font-medium mb-1">${contributor.role}</p>`
+                      : ""
+                  }
+                  ${
+                    contributor.tagline
+                      ? `<p class="text-gray-600 text-xs contributor-tagline">"${contributor.tagline}"</p>`
+                      : ""
+                  }
+                </div>
+              </div>
+            </div>
+            
+            <div class="contributor-social-modern">
+              <a href="https://github.com/${
+                contributor.github
+              }" target="_blank" 
+                 class="social-link-modern" title="GitHub"
+                 onclick="trackContributorClick('${contributor.name}')">
+                <i class="fab fa-github"></i>
+              </a>
+              ${
+                contributor.linkedin
+                  ? `
+                <a href="https://linkedin.com/in/${contributor.linkedin}" target="_blank" 
+                   class="social-link-modern" title="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              `
+                  : ""
+              }
+              ${
+                contributor.website
+                  ? `
+                <a href="${contributor.website}" target="_blank" 
+                   class="social-link-modern" title="Website">
+                  <i class="fas fa-globe"></i>
+                </a>
+              `
+                  : ""
+              }
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+  }
 }
 
 function updateStats(categories) {
@@ -231,6 +258,52 @@ function updateContributorStats(count) {
   const contributorsElement = document.getElementById("total-contributors");
   if (contributorsElement) {
     contributorsElement.textContent = count + "+";
+  }
+}
+
+// Tooltip functionality
+function showTooltip(element) {
+  const contributorName = element.dataset.contributorName;
+  const contributionCount = element.dataset.contributionCount;
+  const contributions = JSON.parse(element.dataset.contributions);
+
+  // Remove any existing tooltip
+  const existingTooltip = document.getElementById("contribution-tooltip-modal");
+  if (existingTooltip) {
+    existingTooltip.remove();
+  }
+
+  // Create tooltip HTML
+  const tooltipHTML = `
+    <div id="contribution-tooltip-modal" class="tooltip-modal">
+      <div class="tooltip-backdrop-modal" onclick="closeTooltip()"></div>
+      <div class="tooltip-content-modal">
+        <div class="flex justify-between items-center mb-3">
+          <div class="tooltip-header-modal">Contributions (${contributionCount})</div>
+          <button class="text-gray-400 hover:text-gray-600 text-lg" onclick="closeTooltip()" title="Close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mb-2 font-medium text-gray-700">${contributorName}</div>
+        <ul class="tooltip-list-modal">
+          ${
+            contributions.length > 0
+              ? contributions.map((contrib) => `<li>• ${contrib}</li>`).join("")
+              : "<li>No contributions listed</li>"
+          }
+        </ul>
+      </div>
+    </div>
+  `;
+
+  // Append to body
+  document.body.insertAdjacentHTML("beforeend", tooltipHTML);
+}
+
+function closeTooltip() {
+  const tooltip = document.getElementById("contribution-tooltip-modal");
+  if (tooltip) {
+    tooltip.remove();
   }
 }
 
