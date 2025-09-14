@@ -53,6 +53,11 @@
           "title": "Askify",
           "url": "https://askify.video/",
           "description": "AI-powered Q&A and knowledge base assistant"
+        },
+        {
+          "title": "Rytr",
+          "url": "https://rytr.me/",
+          "description": "AI-powered writing assistant for blogs, emails & ads."
         }
       ]
     },
@@ -236,6 +241,11 @@
           "title": "Cursor AI IDE",
           "url": "https://cursor.sh",
           "description": "AI-first code editor with free features for real-time coding assistance"
+        },
+        {
+          "title": "Aider",
+          "url": "https://aider.chat/",
+          "description": "AI pair programming in your terminal"
         }
 
       ]
@@ -288,6 +298,11 @@
           "title": "Flow",
           "url": "https://labs.google/flow",
           "description": "AI platform for editing and producing video content"
+        },
+        {
+          "title": "Kapwing",
+          "url": "https://www.kapwing.com/",
+          "description": "AI-powered free video editor for creators"
         }
       ]
     },
@@ -359,6 +374,11 @@
           "title": "Leiga AI SMART Tools",
           "url": "https://www.leiga.com/free-tools",
           "description": "100% free AI tools for tasks like SMART goals, to-do lists, and prompts"
+        },
+        {
+          "title": "ChatPDF",
+          "url": "https://www.chatpdf.com/",
+          "description": "Chat with and summarize PDFs instantly."
         }
       ]
     },
@@ -381,6 +401,11 @@
           "title": "Google AI Studio",
           "url": "https://aistudio.google.com",
           "description": "Web-based IDE for prototyping with Gemini AI models"
+        },
+        {
+          "title": "Hugging Face Spaces",
+          "url": "https://huggingface.co/spaces",
+          "description": "AI Model Prototyping"
         }
       ]
     },

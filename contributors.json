@@ -134,6 +134,22 @@
         "Added animated hover effects to footer links."
       ],
       "role": "Contributor"
+    },
+    {
+      "name": "Sidra Jahangir",
+      "github": "Itz-Sidra",
+      "avatar": "https://avatars.githubusercontent.com/u/182225159?v=4",
+      "linkedin": "https://www.linkedin.com/in/sidra-jahangir-6a3887320/",
+      "tagline": "Learn. Build. Conquer.",
+      "contributions": [
+        "Fixed documentation issues",
+        "Added Rytr under AI writing & Content",
+        "Added Aider under AI coding",
+        "Added Kapwing under AI video editing", 
+        "Added Hugging Face Spaces under AI prototyping", 
+        "Added ChatPDF under AI productivity."
+      ],
+      "role": "Contributor"
     }
   ]
 }
