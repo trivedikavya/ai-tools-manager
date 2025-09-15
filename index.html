@@ -200,43 +200,131 @@
 
     <!-- Custom Styles -->
     <style>
-      /* CSS Custom Properties for Light/Dark Mode */
+      /* CSS Custom Properties for Professional Theme System */
       :root {
-        /* Light mode colors (default) */
-        --bg-primary: #f9fafb;
-        --bg-secondary: #ffffff;
-        --bg-tertiary: #f3f4f6;
-        --text-primary: #111827;
-        --text-secondary: #374151;
-        --text-tertiary: #6b7280;
-        --border-color: #e5e7eb;
+        /* Default Light Theme */
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-tertiary: #f1f5f9;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-tertiary: #64748b;
+        --border-color: #e2e8f0;
         --card-bg: #ffffff;
-        --card-border: #e5e7eb;
-        --card-shadow: rgba(0, 0, 0, 0.1);
+        --card-border: #e2e8f0;
+        --card-shadow: rgba(148, 163, 184, 0.15);
         --nav-bg: #ffffff;
-        --nav-shadow: rgba(0, 0, 0, 0.1);
-        --button-bg: #1f2937;
-        --button-text: #ffffff;
-        --button-hover: #111827;
-      }
-
-      [data-theme="dark"] {
-        /* Dark mode colors */
-        --bg-primary: #0f172a;
-        --bg-secondary: #1e293b;
-        --bg-tertiary: #334155;
-        --text-primary: #f8fafc;
-        --text-secondary: #e2e8f0;
-        --text-tertiary: #cbd5e1;
-        --border-color: #475569;
-        --card-bg: #1e293b;
-        --card-border: #475569;
-        --card-shadow: rgba(0, 0, 0, 0.3);
-        --nav-bg: #1e293b;
-        --nav-shadow: rgba(0, 0, 0, 0.3);
+        --nav-shadow: rgba(148, 163, 184, 0.15);
         --button-bg: #3b82f6;
         --button-text: #ffffff;
         --button-hover: #2563eb;
+        --accent-color: #3b82f6;
+        --accent-light: #dbeafe;
+      }
+
+      [data-theme="arctic-blue"] {
+        /* Arctic Blue - Clean, cool, and crisp interface */
+        --bg-primary: #f0f9ff;
+        --bg-secondary: #e0f2fe;
+        --bg-tertiary: #bae6fd;
+        --text-primary: #0c4a6e;
+        --text-secondary: #0369a1;
+        --text-tertiary: #0284c7;
+        --border-color: #7dd3fc;
+        --card-bg: #ffffff;
+        --card-border: #7dd3fc;
+        --card-shadow: rgba(56, 189, 248, 0.12);
+        --nav-bg: rgba(255, 255, 255, 0.95);
+        --nav-shadow: rgba(56, 189, 248, 0.12);
+        --button-bg: #0284c7;
+        --button-text: #ffffff;
+        --button-hover: #0369a1;
+        --accent-color: #0284c7;
+        --accent-light: #e0f2fe;
+      }
+
+      [data-theme="graphite"] {
+        /* Graphite - Sleek, solid, and professional with grey tones */
+        --bg-primary: #18181b;
+        --bg-secondary: #27272a;
+        --bg-tertiary: #3f3f46;
+        --text-primary: #fafafa;
+        --text-secondary: #e4e4e7;
+        --text-tertiary: #a1a1aa;
+        --border-color: #52525b;
+        --card-bg: #27272a;
+        --card-border: #52525b;
+        --card-shadow: rgba(0, 0, 0, 0.25);
+        --nav-bg: rgba(39, 39, 42, 0.95);
+        --nav-shadow: rgba(0, 0, 0, 0.25);
+        --button-bg: #71717a;
+        --button-text: #ffffff;
+        --button-hover: #52525b;
+        --accent-color: #71717a;
+        --accent-light: rgba(113, 113, 122, 0.1);
+      }
+
+      [data-theme="proxima"] {
+        /* Proxima - Futuristic, advanced, and professional */
+        --bg-primary: #0a0a0f;
+        --bg-secondary: #1a1a2e;
+        --bg-tertiary: #16213e;
+        --text-primary: #eef2ff;
+        --text-secondary: #c7d2fe;
+        --text-tertiary: #a5b4fc;
+        --border-color: #4338ca;
+        --card-bg: #1a1a2e;
+        --card-border: #4338ca;
+        --card-shadow: rgba(67, 56, 202, 0.15);
+        --nav-bg: rgba(26, 26, 46, 0.95);
+        --nav-shadow: rgba(67, 56, 202, 0.15);
+        --button-bg: #6366f1;
+        --button-text: #ffffff;
+        --button-hover: #4338ca;
+        --accent-color: #6366f1;
+        --accent-light: rgba(99, 102, 241, 0.1);
+      }
+
+      [data-theme="clarity"] {
+        /* Clarity - Clean, easy-to-navigate, and understandable */
+        --bg-primary: #f5f8f5;
+        --bg-secondary: #eef4ee;
+        --bg-tertiary: #e0ebe0;
+        --text-primary: #1a2e1a;
+        --text-secondary: #2d4a2d;
+        --text-tertiary: #5a7a5a;
+        --border-color: #c5d5c5;
+        --card-bg: #ffffff;
+        --card-border: #c5d5c5;
+        --card-shadow: rgba(90, 122, 90, 0.1);
+        --nav-bg: rgba(255, 255, 255, 0.98);
+        --nav-shadow: rgba(90, 122, 90, 0.1);
+        --button-bg: #5d7c0b;
+        --button-text: #ffffff;
+        --button-hover: #4a6209;
+        --accent-color: #5d7c0b;
+        --accent-light: #f0f9e8;
+      }
+
+      [data-theme="vertex"] {
+        /* Vertex - Technical, sharp, and intelligent */
+        --bg-primary: #0a0e0f;
+        --bg-secondary: #131b1d;
+        --bg-tertiary: #1e2729;
+        --text-primary: #f0f6fc;
+        --text-secondary: #c9d1d9;
+        --text-tertiary: #8b949e;
+        --border-color: #30363d;
+        --card-bg: #131b1d;
+        --card-border: #30363d;
+        --card-shadow: rgba(248, 81, 73, 0.1);
+        --nav-bg: rgba(19, 27, 29, 0.95);
+        --nav-shadow: rgba(248, 81, 73, 0.1);
+        --button-bg: #f85149;
+        --button-text: #ffffff;
+        --button-hover: #da3633;
+        --accent-color: #f85149;
+        --accent-light: rgba(248, 81, 73, 0.1);
       }
 
       .gradient-bg {
@@ -263,69 +351,6 @@
         animation: gradientShift 3s ease infinite;
         box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
         transition: all 0.3s ease;
-      }
-
-      /* Theme Toggle Styling */
-      .toggle-switch {
-        position: relative;
-        width: 50px;
-        height: 25px;
-        --light: #d8dbe0;
-        --dark: #28292c;
-        --link: rgb(27, 129, 112);
-        --link-hover: rgb(24, 94, 82);
-      }
-
-      .switch-label {
-        position: absolute;
-        width: 100%;
-        height: 25px;
-        background-color: var(--dark);
-        border-radius: 12.5px;
-        cursor: pointer;
-        border: 2px solid var(--dark);
-      }
-
-      .checkbox {
-        position: absolute;
-        display: none;
-      }
-
-      .slider {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 12.5px;
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-
-      .checkbox:checked ~ .slider {
-        background-color: var(--light);
-      }
-
-      .slider::before {
-        content: "";
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        -webkit-box-shadow: inset 8px -2px 0px 0px var(--light);
-        box-shadow: inset 8px -2px 0px 0px var(--light);
-        background-color: var(--dark);
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
-      }
-
-      .checkbox:checked ~ .slider::before {
-        -webkit-transform: translateX(25px);
-        -ms-transform: translateX(25px);
-        transform: translateX(25px);
-        background-color: var(--dark);
-        -webkit-box-shadow: none;
-        box-shadow: none;
       }
 
       .star-count:hover {
@@ -411,6 +436,7 @@
       .contributor-tagline {
         display: -webkit-box;
         -webkit-line-clamp: 2;
+        line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -754,6 +780,322 @@
       .contributor-card-modern {
         animation: fadeInUp 0.6s ease-out forwards;
       }
+
+      /* Theme Selector Styles */
+      .theme-option {
+        border: 2px solid transparent;
+        transition: all 0.2s ease;
+      }
+
+      .theme-option.active {
+        border-color: var(--accent-color);
+        background-color: var(--accent-light);
+      }
+
+      .theme-option:hover {
+        background-color: var(--accent-light);
+        transform: translateY(-1px);
+        border-color: var(--accent-color);
+      }
+
+      #theme-dropdown {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+        pointer-events: none;
+        box-shadow: 0 10px 25px var(--card-shadow);
+      }
+
+      #theme-dropdown.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      /* Close dropdown when clicking outside */
+      .dropdown-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 40;
+      }
+
+      /* Footer Theme Styling */
+      #site-footer {
+        background-color: #f8fafc;
+        color: #1e293b;
+      }
+
+      .footer-text-primary {
+        color: #1e293b;
+      }
+
+      .footer-text-secondary {
+        color: #64748b;
+      }
+
+      .footer-link:hover {
+        color: #1e293b;
+      }
+
+      .footer-border {
+        border-top: 1px solid #e2e8f0;
+      }
+
+      /* Footer styling for themed modes */
+      [data-theme="arctic-blue"] #site-footer {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+      }
+
+      [data-theme="arctic-blue"] .footer-text-primary {
+        color: var(--text-primary);
+      }
+
+      [data-theme="arctic-blue"] .footer-text-secondary {
+        color: var(--text-tertiary);
+      }
+
+      [data-theme="arctic-blue"] .footer-link:hover {
+        color: var(--text-primary);
+      }
+
+      [data-theme="arctic-blue"] .footer-border {
+        border-top-color: var(--border-color);
+      }
+
+      [data-theme="graphite"] #site-footer,
+      [data-theme="proxima"] #site-footer,
+      [data-theme="vertex"] #site-footer {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+      }
+
+      [data-theme="graphite"] .footer-text-primary,
+      [data-theme="proxima"] .footer-text-primary,
+      [data-theme="vertex"] .footer-text-primary {
+        color: var(--text-primary);
+      }
+
+      [data-theme="graphite"] .footer-text-secondary,
+      [data-theme="proxima"] .footer-text-secondary,
+      [data-theme="vertex"] .footer-text-secondary {
+        color: var(--text-tertiary);
+      }
+
+      [data-theme="graphite"] .footer-link:hover,
+      [data-theme="proxima"] .footer-link:hover,
+      [data-theme="vertex"] .footer-link:hover {
+        color: var(--text-primary);
+      }
+
+      [data-theme="graphite"] .footer-border,
+      [data-theme="proxima"] .footer-border,
+      [data-theme="vertex"] .footer-border {
+        border-top-color: var(--border-color);
+      }
+
+      [data-theme="clarity"] #site-footer {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+      }
+
+      [data-theme="clarity"] .footer-text-primary {
+        color: var(--text-primary);
+      }
+
+      [data-theme="clarity"] .footer-text-secondary {
+        color: var(--text-tertiary);
+      }
+
+      [data-theme="clarity"] .footer-link:hover {
+        color: var(--text-primary);
+      }
+
+      [data-theme="clarity"] .footer-border {
+        border-top-color: var(--border-color);
+      }
+
+      /* Hero Section Theme Styling */
+      #hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .hero-title {
+        color: white;
+      }
+
+      .hero-accent {
+        background: linear-gradient(45deg, #fbbf24, #f97316);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        /* Fallback for when gradient text doesn't work */
+        color: #f97316;
+      }
+
+      .hero-subtitle {
+        color: #dbeafe;
+      }
+
+      .hero-cta-primary {
+        background-color: white;
+        color: #3b82f6;
+      }
+
+      .hero-cta-primary:hover {
+        background-color: #f1f5f9;
+      }
+
+      .hero-cta-secondary {
+        border: 2px solid white;
+        color: white;
+      }
+
+      .hero-cta-secondary:hover {
+        background-color: white;
+        color: #3b82f6;
+      }
+
+      /* Hero styling for themed modes */
+      [data-theme="arctic-blue"] #hero-section {
+        background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--accent-color) 100%);
+        color: var(--text-primary);
+      }
+
+      [data-theme="arctic-blue"] .hero-title {
+        color: var(--text-primary);
+      }
+
+      [data-theme="arctic-blue"] .hero-accent {
+        background: linear-gradient(45deg, #0284c7, #0369a1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: #0284c7; /* Fallback */
+      }
+
+      [data-theme="arctic-blue"] .hero-subtitle {
+        color: var(--text-secondary);
+      }
+
+      [data-theme="arctic-blue"] .hero-cta-primary {
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      [data-theme="arctic-blue"] .hero-cta-primary:hover {
+        background-color: var(--button-hover);
+      }
+
+      [data-theme="arctic-blue"] .hero-cta-secondary {
+        border: 2px solid var(--text-primary);
+        color: var(--text-primary);
+      }
+
+      [data-theme="arctic-blue"] .hero-cta-secondary:hover {
+        background-color: var(--text-primary);
+        color: var(--bg-primary);
+      }
+
+      [data-theme="graphite"] #hero-section,
+      [data-theme="proxima"] #hero-section,
+      [data-theme="vertex"] #hero-section {
+        background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--accent-color) 100%);
+        color: var(--text-primary);
+      }
+
+      [data-theme="graphite"] .hero-title,
+      [data-theme="proxima"] .hero-title,
+      [data-theme="vertex"] .hero-title {
+        color: var(--text-primary);
+      }
+
+      [data-theme="graphite"] .hero-accent,
+      [data-theme="proxima"] .hero-accent,
+      [data-theme="vertex"] .hero-accent {
+        background: linear-gradient(45deg, #fbbf24, #f97316);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: #fbbf24; /* Bright fallback for dark themes */
+      }
+
+      [data-theme="graphite"] .hero-subtitle,
+      [data-theme="proxima"] .hero-subtitle,
+      [data-theme="vertex"] .hero-subtitle {
+        color: var(--text-secondary);
+      }
+
+      [data-theme="graphite"] .hero-cta-primary,
+      [data-theme="proxima"] .hero-cta-primary,
+      [data-theme="vertex"] .hero-cta-primary {
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      [data-theme="graphite"] .hero-cta-primary:hover,
+      [data-theme="proxima"] .hero-cta-primary:hover,
+      [data-theme="vertex"] .hero-cta-primary:hover {
+        background-color: var(--button-hover);
+      }
+
+      [data-theme="graphite"] .hero-cta-secondary,
+      [data-theme="proxima"] .hero-cta-secondary,
+      [data-theme="vertex"] .hero-cta-secondary {
+        border: 2px solid var(--text-primary);
+        color: var(--text-primary);
+      }
+
+      [data-theme="graphite"] .hero-cta-secondary:hover,
+      [data-theme="proxima"] .hero-cta-secondary:hover,
+      [data-theme="vertex"] .hero-cta-secondary:hover {
+        background-color: var(--text-primary);
+        color: var(--bg-primary);
+      }
+
+      [data-theme="clarity"] #hero-section {
+        background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--accent-color) 100%);
+        color: var(--text-primary);
+      }
+
+      [data-theme="clarity"] .hero-title {
+        color: var(--text-primary);
+      }
+
+      [data-theme="clarity"] .hero-accent {
+        background: linear-gradient(45deg, #5d7c0b, #4a6209);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: #5d7c0b; /* Fallback */
+      }
+
+      [data-theme="clarity"] .hero-subtitle {
+        color: var(--text-secondary);
+      }
+
+      [data-theme="clarity"] .hero-cta-primary {
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      [data-theme="clarity"] .hero-cta-primary:hover {
+        background-color: var(--button-hover);
+      }
+
+      [data-theme="clarity"] .hero-cta-secondary {
+        border: 2px solid var(--text-primary);
+        color: var(--text-primary);
+      }
+
+      [data-theme="clarity"] .hero-cta-secondary:hover {
+        background-color: var(--text-primary);
+        color: var(--bg-primary);
+      }
     </style>
   </head>
   <body class="font-sans" style="background-color: var(--bg-primary); color: var(--text-primary); transition: background-color 0.3s ease, color 0.3s ease;">
@@ -804,12 +1146,95 @@
 
           <!-- GitHub Button and Theme Toggle -->
           <div class="flex items-center space-x-4">
-            <!-- Theme Toggle Switch -->
-            <div class="toggle-switch">
-              <label class="switch-label">
-                <input type="checkbox" class="checkbox" checked id="theme-toggle">
-                <span class="slider"></span>
-              </label>
+            <!-- Theme Selector -->
+            <div class="relative">
+              <button
+                id="theme-selector"
+                class="flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors"
+                style="background-color: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color);"
+                onclick="toggleThemeDropdown()"
+              >
+                <i class="fas fa-palette"></i>
+                <span class="hidden sm:inline" id="current-theme-name">System Default</span>
+                <i class="fas fa-chevron-down text-xs"></i>
+              </button>
+              
+              <!-- Theme Dropdown -->
+              <div 
+                id="theme-dropdown" 
+                class="absolute right-0 mt-2 w-64 rounded-lg shadow-lg z-50 hidden"
+                style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+              >
+                <div class="p-4">
+                  <h3 class="text-sm font-semibold mb-3" style="color: var(--text-primary);">Choose Theme</h3>
+                  <div class="space-y-2">
+                    
+                    <button
+                      onclick="changeTheme('system', 'System Default')"
+                      class="theme-option w-full flex items-center space-x-3 p-2 rounded-lg transition-colors active"
+                      data-theme="system"
+                    >
+                      <div class="w-4 h-4 rounded-full" style="background: linear-gradient(45deg, #ffffff 50%, #18181b 50%);"></div>
+                      <span class="text-sm" style="color: var(--text-secondary);">System Default</span>
+                    </button>
+                    
+                    <button
+                      onclick="changeTheme('default-light', 'Default Light')"
+                      class="theme-option w-full flex items-center space-x-3 p-2 rounded-lg transition-colors"
+                      data-theme="default-light"
+                    >
+                      <div class="w-4 h-4 rounded-full" style="background: linear-gradient(45deg, #ffffff 0%, #3b82f6 100%);"></div>
+                      <span class="text-sm" style="color: var(--text-secondary);">Default Light</span>
+                    </button>
+                    
+                    <button
+                      onclick="changeTheme('arctic-blue', 'Arctic Blue')"
+                      class="theme-option w-full flex items-center space-x-3 p-2 rounded-lg transition-colors"
+                      data-theme="arctic-blue"
+                    >
+                      <div class="w-4 h-4 rounded-full" style="background: linear-gradient(45deg, #f0f9ff 0%, #0284c7 100%);"></div>
+                      <span class="text-sm" style="color: var(--text-secondary);">Arctic Blue</span>
+                    </button>
+                    
+                    <button
+                      onclick="changeTheme('graphite', 'Graphite')"
+                      class="theme-option w-full flex items-center space-x-3 p-2 rounded-lg transition-colors"
+                      data-theme="graphite"
+                    >
+                      <div class="w-4 h-4 rounded-full" style="background: linear-gradient(45deg, #18181b 0%, #71717a 100%);"></div>
+                      <span class="text-sm" style="color: var(--text-secondary);">Graphite</span>
+                    </button>
+                    
+                    <button
+                      onclick="changeTheme('proxima', 'Proxima')"
+                      class="theme-option w-full flex items-center space-x-3 p-2 rounded-lg transition-colors"
+                      data-theme="proxima"
+                    >
+                      <div class="w-4 h-4 rounded-full" style="background: linear-gradient(45deg, #0a0a0f 0%, #6366f1 100%);"></div>
+                      <span class="text-sm" style="color: var(--text-secondary);">Proxima</span>
+                    </button>
+                    
+                    <button
+                      onclick="changeTheme('clarity', 'Clarity')"
+                      class="theme-option w-full flex items-center space-x-3 p-2 rounded-lg transition-colors"
+                      data-theme="clarity"
+                    >
+                      <div class="w-4 h-4 rounded-full" style="background: linear-gradient(45deg, #fcfcfd 0%, #5d7c0b 100%);"></div>
+                      <span class="text-sm" style="color: var(--text-secondary);">Clarity</span>
+                    </button>
+                    
+                    <button
+                      onclick="changeTheme('vertex', 'Vertex')"
+                      class="theme-option w-full flex items-center space-x-3 p-2 rounded-lg transition-colors"
+                      data-theme="vertex"
+                    >
+                      <div class="w-4 h-4 rounded-full" style="background: linear-gradient(45deg, #0d1117 0%, #f85149 100%);"></div>
+                      <span class="text-sm" style="color: var(--text-secondary);">Vertex</span>
+                    </button>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
             
             <a
@@ -870,18 +1295,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
+    <section class="py-20" id="hero-section">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="max-w-4xl mx-auto">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 hero-title">
             Discover the Best
-            <span
-              class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"
-            >
+            <span class="hero-accent">
               AI Tools
             </span>
           </h1>
-          <p class="text-xl md:text-2xl mb-8 text-blue-100">
+          <p class="text-xl md:text-2xl mb-8 hero-subtitle">
             A curated collection of professional AI tools for developers,
             designers, and creators. Open source and community-driven.
           </p>
@@ -913,14 +1336,14 @@
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#tools"
-              class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              class="hero-cta-primary px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               Explore Tools
             </a>
             <a
               href="https://github.com/ArshdeepGrover/ai-tools-manager"
               target="_blank"
-              class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center space-x-2"
+              class="hero-cta-secondary px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
               id="hero-github-button"
             >
               Contribute
@@ -1163,7 +1586,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="py-12" id="site-footer">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="col-span-1 md:col-span-2">
@@ -1174,11 +1597,11 @@
                 <i class="fas fa-robot text-white text-lg"></i>
               </div>
               <div>
-                <h3 class="text-xl font-bold">AI Tools Hub</h3>
-                <p class="text-gray-400 text-sm">Professional Directory</p>
+                <h3 class="text-xl font-bold footer-text-primary">AI Tools Hub</h3>
+                <p class="text-sm footer-text-secondary">Professional Directory</p>
               </div>
             </div>
-            <p class="text-gray-400 mb-4">
+            <p class="mb-4 footer-text-secondary">
               Discover, explore, and contribute to the most comprehensive
               collection of AI tools for professionals.
             </p>
@@ -1186,7 +1609,7 @@
               <a
                 href="https://github.com/ArshdeepGrover/ai-tools-manager"
                 target="_blank"
-                class="text-gray-400 hover:text-white transition-colors"
+                class="footer-text-secondary footer-link transition-colors"
               >
                 <i class="fab fa-github text-xl"></i>
               </a>
@@ -1194,27 +1617,27 @@
           </div>
 
           <div>
-            <h4 class="font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-gray-400">
+            <h4 class="font-semibold mb-4 footer-text-primary">Quick Links</h4>
+            <ul class="space-y-2">
               <li>
-                <a href="#tools" class="hover:text-white transition-colors"
+                <a href="#tools" class="footer-text-secondary footer-link transition-colors"
                   >Browse Tools</a
                 >
               </li>
               <li>
-                <a href="#categories" class="hover:text-white transition-colors"
+                <a href="#categories" class="footer-text-secondary footer-link transition-colors"
                   >Categories</a
                 >
               </li>
               <li>
                 <a
                   href="#contributors"
-                  class="hover:text-white transition-colors"
+                  class="footer-text-secondary footer-link transition-colors"
                   >Contributors</a
                 >
               </li>
               <li>
-                <a href="#about" class="hover:text-white transition-colors"
+                <a href="#about" class="footer-text-secondary footer-link transition-colors"
                   >About</a
                 >
               </li>
@@ -1222,13 +1645,13 @@
           </div>
 
           <div>
-            <h4 class="font-semibold mb-4">Community</h4>
-            <ul class="space-y-2 text-gray-400">
+            <h4 class="font-semibold mb-4 footer-text-primary">Community</h4>
+            <ul class="space-y-2">
               <li>
                 <a
                   href="https://github.com/ArshdeepGrover/ai-tools-manager"
                   target="_blank"
-                  class="hover:text-white transition-colors"
+                  class="footer-text-secondary footer-link transition-colors"
                   >GitHub</a
                 >
               </li>
@@ -1236,7 +1659,7 @@
                 <a
                   href="https://github.com/ArshdeepGrover/ai-tools-manager/issues"
                   target="_blank"
-                  class="hover:text-white transition-colors"
+                  class="footer-text-secondary footer-link transition-colors"
                   >Report Issues</a
                 >
               </li>
@@ -1245,20 +1668,20 @@
         </div>
 
         <!-- GitHub Stats -->
-        <div class="border-t border-gray-800 mt-8 pt-8">
+        <div class="footer-border mt-8 pt-8">
           <div class="flex justify-center items-center space-x-8 mb-6">
-            <div class="flex items-center space-x-2 text-gray-400">
+            <div class="flex items-center space-x-2 footer-text-secondary">
               <i class="fas fa-star text-yellow-400"></i>
               <span class="text-sm">Stars:</span>
-              <span class="font-bold text-white" id="footer-star-count">-</span>
+              <span class="font-bold footer-text-primary" id="footer-star-count">-</span>
             </div>
-            <div class="flex items-center space-x-2 text-gray-400">
+            <div class="flex items-center space-x-2 footer-text-secondary">
               <i class="fas fa-code-branch text-blue-400"></i>
               <span class="text-sm">Forks:</span>
-              <span class="font-bold text-white" id="footer-fork-count">-</span>
+              <span class="font-bold footer-text-primary" id="footer-fork-count">-</span>
             </div>
           </div>
-          <div class="text-center text-gray-400">
+          <div class="text-center footer-text-secondary">
             <p>
               &copy; 2025 AI Tools Hub. Open source project by Arshdeep Singh.
               MIT License.

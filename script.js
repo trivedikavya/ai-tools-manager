@@ -493,34 +493,149 @@ function updateFooterStats(starCount, forkCount) {
   }
 }
 
-// Theme Toggle Functionality
+// Advanced Professional Theme System
+const themes = {
+  'system': 'System Default',
+  'default-light': 'Default Light',
+  'arctic-blue': 'Arctic Blue',
+  'graphite': 'Graphite',
+  'proxima': 'Proxima',
+  'clarity': 'Clarity',
+  'vertex': 'Vertex'
+};
+
+// Make functions globally accessible
+window.toggleThemeDropdown = toggleThemeDropdown;
+window.changeTheme = changeTheme;
+
+function getSystemTheme() {
+  // Detect system preference
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'graphite'; // Use graphite for dark system preference
+  }
+  return 'default-light'; // Use default light for light system preference
+}
+
 function initializeTheme() {
-  const themeToggle = document.getElementById('theme-toggle');
+  // Check for saved theme preference or default to system
+  const savedTheme = localStorage.getItem('theme') || 'system';
   const body = document.body;
   
-  // Check for saved theme preference or default to light mode
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  // Apply the saved theme
+  applyTheme(savedTheme);
   
-  if (savedTheme === 'dark') {
-    body.setAttribute('data-theme', 'dark');
-    themeToggle.checked = false; // Unchecked = dark mode
-  } else {
-    body.removeAttribute('data-theme');
-    themeToggle.checked = true; // Checked = light mode
+  // Update the UI to reflect current theme
+  updateThemeSelector(savedTheme);
+  
+  // Listen for system theme changes if user has selected 'system'
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function() {
+      const currentTheme = localStorage.getItem('theme') || 'system';
+      if (currentTheme === 'system') {
+        applyTheme('system');
+        updateThemeSelector('system');
+      }
+    });
   }
   
-  // Add event listener for theme toggle
-  themeToggle.addEventListener('change', function() {
-    if (this.checked) {
-      // Switch to light mode
-      body.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      // Switch to dark mode
-      body.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('theme-dropdown');
+    const selector = document.getElementById('theme-selector');
+    
+    if (!selector.contains(event.target) && !dropdown.contains(event.target)) {
+      closeThemeDropdown();
     }
   });
+}
+
+function applyTheme(themeName) {
+  const body = document.body;
+  
+  // Remove any existing theme attributes
+  body.removeAttribute('data-theme');
+  
+  // Apply new theme
+  if (themeName === 'system') {
+    const systemTheme = getSystemTheme();
+    if (systemTheme !== 'default-light') {
+      body.setAttribute('data-theme', systemTheme);
+    }
+  } else if (themeName !== 'default-light') {
+    body.setAttribute('data-theme', themeName);
+  }
+  
+  // Save to localStorage
+  localStorage.setItem('theme', themeName);
+}
+
+function updateThemeSelector(currentTheme) {
+  const currentThemeName = document.getElementById('current-theme-name');
+  const themeOptions = document.querySelectorAll('.theme-option');
+  
+  // Update current theme display
+  if (currentThemeName) {
+    currentThemeName.textContent = themes[currentTheme];
+  }
+  
+  // Update active state for theme options
+  themeOptions.forEach(option => {
+    const optionTheme = option.getAttribute('data-theme');
+    if (optionTheme === currentTheme) {
+      option.classList.add('active');
+    } else {
+      option.classList.remove('active');
+    }
+  });
+}
+
+function toggleThemeDropdown() {
+  const dropdown = document.getElementById('theme-dropdown');
+  const isVisible = dropdown.classList.contains('show');
+  
+  if (isVisible) {
+    closeThemeDropdown();
+  } else {
+    openThemeDropdown();
+  }
+}
+
+function openThemeDropdown() {
+  const dropdown = document.getElementById('theme-dropdown');
+  dropdown.classList.remove('hidden');
+  
+  // Small delay to allow for transition
+  setTimeout(() => {
+    dropdown.classList.add('show');
+  }, 10);
+}
+
+function closeThemeDropdown() {
+  const dropdown = document.getElementById('theme-dropdown');
+  dropdown.classList.remove('show');
+  
+  setTimeout(() => {
+    dropdown.classList.add('hidden');
+  }, 200);
+}
+
+function changeTheme(themeName, displayName) {
+  // Apply the new theme
+  applyTheme(themeName);
+  
+  // Update the UI
+  updateThemeSelector(themeName);
+  
+  // Close the dropdown
+  closeThemeDropdown();
+  
+  // Optional: Track theme change analytics
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'theme_change', {
+      theme_name: themeName,
+      event_category: 'customization',
+    });
+  }
 }
 
 // Initialize theme when DOM is loaded
