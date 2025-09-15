@@ -200,6 +200,45 @@
 
     <!-- Custom Styles -->
     <style>
+      /* CSS Custom Properties for Light/Dark Mode */
+      :root {
+        /* Light mode colors (default) */
+        --bg-primary: #f9fafb;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #f3f4f6;
+        --text-primary: #111827;
+        --text-secondary: #374151;
+        --text-tertiary: #6b7280;
+        --border-color: #e5e7eb;
+        --card-bg: #ffffff;
+        --card-border: #e5e7eb;
+        --card-shadow: rgba(0, 0, 0, 0.1);
+        --nav-bg: #ffffff;
+        --nav-shadow: rgba(0, 0, 0, 0.1);
+        --button-bg: #1f2937;
+        --button-text: #ffffff;
+        --button-hover: #111827;
+      }
+
+      [data-theme="dark"] {
+        /* Dark mode colors */
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --text-primary: #f8fafc;
+        --text-secondary: #e2e8f0;
+        --text-tertiary: #cbd5e1;
+        --border-color: #475569;
+        --card-bg: #1e293b;
+        --card-border: #475569;
+        --card-shadow: rgba(0, 0, 0, 0.3);
+        --nav-bg: #1e293b;
+        --nav-shadow: rgba(0, 0, 0, 0.3);
+        --button-bg: #3b82f6;
+        --button-text: #ffffff;
+        --button-hover: #2563eb;
+      }
+
       .gradient-bg {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
@@ -224,6 +263,69 @@
         animation: gradientShift 3s ease infinite;
         box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
         transition: all 0.3s ease;
+      }
+
+      /* Theme Toggle Styling */
+      .toggle-switch {
+        position: relative;
+        width: 50px;
+        height: 25px;
+        --light: #d8dbe0;
+        --dark: #28292c;
+        --link: rgb(27, 129, 112);
+        --link-hover: rgb(24, 94, 82);
+      }
+
+      .switch-label {
+        position: absolute;
+        width: 100%;
+        height: 25px;
+        background-color: var(--dark);
+        border-radius: 12.5px;
+        cursor: pointer;
+        border: 2px solid var(--dark);
+      }
+
+      .checkbox {
+        position: absolute;
+        display: none;
+      }
+
+      .slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 12.5px;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
+
+      .checkbox:checked ~ .slider {
+        background-color: var(--light);
+      }
+
+      .slider::before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        -webkit-box-shadow: inset 8px -2px 0px 0px var(--light);
+        box-shadow: inset 8px -2px 0px 0px var(--light);
+        background-color: var(--dark);
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
+
+      .checkbox:checked ~ .slider::before {
+        -webkit-transform: translateX(25px);
+        -ms-transform: translateX(25px);
+        transform: translateX(25px);
+        background-color: var(--dark);
+        -webkit-box-shadow: none;
+        box-shadow: none;
       }
 
       .star-count:hover {
@@ -285,16 +387,16 @@
       }
 
       .contributor-card-modern {
-        background: white;
-        border: 1px solid #e5e7eb;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
         border-radius: 12px;
         padding: 20px;
-        color: #374151;
+        color: var(--text-secondary);
         transition: all 0.3s ease;
         position: relative;
         overflow: visible;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
-          0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        box-shadow: 0 1px 3px 0 var(--card-shadow),
+          0 1px 2px 0 var(--card-shadow);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -318,8 +420,8 @@
 
       .contributor-card-modern:hover {
         transform: translateY(-4px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 20px 25px -5px var(--card-shadow),
+          0 10px 10px -5px var(--card-shadow);
         border-color: #3b82f6;
       }
 
@@ -458,16 +560,16 @@
 
       .tooltip-content-modal {
         position: relative !important;
-        background: white !important;
-        color: #374151 !important;
+        background: var(--card-bg) !important;
+        color: var(--text-secondary) !important;
         padding: 24px !important;
         border-radius: 12px !important;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        box-shadow: 0 25px 50px -12px var(--card-shadow) !important;
         min-width: 320px !important;
         max-width: 500px !important;
         max-height: 80vh !important;
         overflow-y: auto !important;
-        border: 1px solid #e5e7eb !important;
+        border: 1px solid var(--card-border) !important;
         z-index: 1000000 !important;
       }
 
@@ -488,7 +590,7 @@
 
       .tooltip-list-modal li {
         margin-bottom: 8px !important;
-        color: #6b7280 !important;
+        color: var(--text-tertiary) !important;
         padding-left: 8px !important;
       }
 
@@ -590,6 +692,52 @@
           min-width: 0;
           max-width: 100%;
         }
+
+        /* Mobile theme toggle adjustments */
+        .toggle-switch {
+          width: 40px;
+          height: 20px;
+        }
+
+        .switch-label {
+          height: 20px;
+          border-radius: 10px;
+        }
+
+        .slider::before {
+          width: 14px;
+          height: 14px;
+          top: 2px;
+          left: 2px;
+        }
+
+        .checkbox:checked ~ .slider::before {
+          transform: translateX(20px);
+        }
+
+        /* Mobile navigation adjustments for dark mode */
+        #mobile-menu {
+          background-color: var(--nav-bg);
+          border-top: 1px solid var(--border-color);
+        }
+
+        /* Form element focus states for dark mode */
+        input:focus, select:focus {
+          background-color: var(--card-bg) !important;
+          color: var(--text-primary) !important;
+          border-color: #3b82f6 !important;
+        }
+
+        /* Placeholder text for dark mode */
+        input::placeholder {
+          color: var(--text-tertiary);
+        }
+
+        /* Select dropdown options for dark mode */
+        select option {
+          background-color: var(--card-bg);
+          color: var(--text-primary);
+        }
       }
 
       @keyframes fadeInUp {
@@ -608,9 +756,9 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 font-sans">
+  <body class="font-sans" style="background-color: var(--bg-primary); color: var(--text-primary); transition: background-color 0.3s ease, color 0.3s ease;">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="shadow-lg sticky top-0 z-50" style="background-color: var(--nav-bg); box-shadow: 0 1px 3px 0 var(--nav-shadow);">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
@@ -621,8 +769,8 @@
               <i class="fas fa-robot text-white text-lg"></i>
             </div>
             <div>
-              <h1 class="text-xl font-bold text-gray-900">AI Tools Hub</h1>
-              <p class="text-xs text-gray-500">Professional Directory</p>
+              <h1 class="text-xl font-bold" style="color: var(--text-primary);">AI Tools Hub</h1>
+              <p class="text-xs" style="color: var(--text-tertiary);">Professional Directory</p>
             </div>
           </div>
 
@@ -630,32 +778,47 @@
           <div class="hidden md:flex items-center space-x-8">
             <a
               href="#tools"
-              class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              class="font-medium transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >Tools</a
             >
             <a
               href="#categories"
-              class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              class="font-medium transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >Categories</a
             >
             <a
               href="#contributors"
-              class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              class="font-medium transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >Contributors</a
             >
             <a
               href="#about"
-              class="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+              class="font-medium transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >About</a
             >
           </div>
 
-          <!-- GitHub Button -->
+          <!-- GitHub Button and Theme Toggle -->
           <div class="flex items-center space-x-4">
+            <!-- Theme Toggle Switch -->
+            <div class="toggle-switch">
+              <label class="switch-label">
+                <input type="checkbox" class="checkbox" checked id="theme-toggle">
+                <span class="slider"></span>
+              </label>
+            </div>
+            
             <a
               href="https://github.com/ArshdeepGrover/ai-tools-manager"
               target="_blank"
-              class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center space-x-2"
+              class="px-4 py-2 rounded-lg transition-colors flex items-center space-x-2"
+              style="background-color: var(--button-bg); color: var(--button-text);"
+              onmouseover="this.style.backgroundColor='var(--button-hover)'"
+              onmouseout="this.style.backgroundColor='var(--button-bg)'"
               id="nav-github-button"
             >
               <i class="fab fa-github"></i>
@@ -669,7 +832,7 @@
 
             <!-- Mobile Menu Button -->
             <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-              <i class="fas fa-bars text-gray-700"></i>
+              <i class="fas fa-bars" style="color: var(--text-secondary);"></i>
             </button>
           </div>
         </div>
@@ -679,22 +842,26 @@
           <div class="flex flex-col space-y-2">
             <a
               href="#tools"
-              class="text-gray-700 hover:text-blue-600 font-medium py-2"
+              class="font-medium py-2 transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >Tools</a
             >
             <a
               href="#categories"
-              class="text-gray-700 hover:text-blue-600 font-medium py-2"
+              class="font-medium py-2 transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >Categories</a
             >
             <a
               href="#contributors"
-              class="text-gray-700 hover:text-blue-600 font-medium py-2"
+              class="font-medium py-2 transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >Contributors</a
             >
             <a
               href="#about"
-              class="text-gray-700 hover:text-blue-600 font-medium py-2"
+              class="font-medium py-2 transition-colors hover:text-blue-600"
+              style="color: var(--text-secondary);"
               >About</a
             >
           </div>
@@ -764,13 +931,13 @@
     </section>
 
     <!-- Category Filter Section -->
-    <section id="categories" class="py-16 bg-white">
+    <section id="categories" class="py-16" style="background-color: var(--bg-secondary);">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">
             Browse by Category
           </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
+          <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
             Find the perfect AI tools for your specific needs. Filter by
             category to discover tools tailored to your workflow.
           </p>
@@ -786,7 +953,8 @@
                 id="tool-search"
                 type="text"
                 placeholder="Search AI tools (title or description)..."
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
+                class="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-colors"
+                style="background-color: var(--card-bg); color: var(--text-primary); border-color: var(--border-color);"
               />
             </div>
             <!-- Category Select -->
@@ -796,7 +964,8 @@
               >
               <select
                 id="category-select"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white shadow-sm"
+                class="w-full px-4 py-3 rounded-lg border-2 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-colors"
+                style="background-color: var(--card-bg); color: var(--text-primary); border-color: var(--border-color);"
               >
                 <option value="all">Loading categories...</option>
               </select>
@@ -807,7 +976,7 @@
     </section>
 
     <!-- Tools Section -->
-    <section id="tools" class="py-16 bg-gray-50">
+    <section id="tools" class="py-16" style="background-color: var(--bg-primary);">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <main id="main-content">
           <!-- AI Tools will be loaded here -->
@@ -816,14 +985,14 @@
     </section>
 
     <!-- Contributors Section -->
-    <section id="contributors" class="py-16 bg-white">
+    <section id="contributors" class="py-16" style="background-color: var(--bg-secondary);">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">
             Our Contributors
           </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
+          <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
             Meet the
             <span
               id="total-contributors-text"
@@ -869,20 +1038,20 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-50">
+    <section id="about" class="py-16" style="background-color: var(--bg-primary);">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">About</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">About</h2>
+          <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
             Learn more about the creator and the community behind this project.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <!-- Left Column - Created by -->
-          <div class="bg-white rounded-2xl shadow-lg p-8">
+          <div class="rounded-2xl shadow-lg p-8" style="background-color: var(--card-bg);">
             <div class="text-center mb-6">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Created by</h3>
+              <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">Created by</h3>
             </div>
             <div class="flex flex-col items-center space-y-6">
               <img
@@ -891,10 +1060,10 @@
                 class="w-32 h-32 rounded-full object-cover"
               />
               <div class="text-center">
-                <h4 class="text-xl font-bold text-gray-900 mb-2">
+                <h4 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
                   Arshdeep Singh
                 </h4>
-                <p class="text-gray-600 mb-6">
+                <p class="mb-6" style="color: var(--text-secondary);">
                   Passionate about AI and helping developers discover the best
                   tools to accelerate their creative journey. This project is
                   now open source and community-driven.
@@ -939,9 +1108,9 @@
           </div>
 
           <!-- Right Column - Community -->
-          <div class="bg-white rounded-2xl shadow-lg p-8">
+          <div class="rounded-2xl shadow-lg p-8" style="background-color: var(--card-bg);">
             <div class="text-center mb-6">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Community</h3>
+              <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">Community</h3>
             </div>
             <div class="flex flex-col items-center space-y-6">
               <img
@@ -950,10 +1119,10 @@
                 class="w-32 h-32 rounded-full object-cover"
               />
               <div class="text-center">
-                <h4 class="text-xl font-bold text-gray-900 mb-2">
+                <h4 class="text-xl font-bold mb-2" style="color: var(--text-primary);">
                   Meerut Coders
                 </h4>
-                <p class="text-gray-600 mb-6">
+                <p class="mb-6" style="color: var(--text-secondary);">
                   A vibrant community of developers, designers, and tech
                   enthusiasts from Meerut. Join us to learn, share, and grow
                   together in the world of technology and innovation.

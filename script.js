@@ -66,7 +66,7 @@ function applyFilters() {
   const mainContent = document.getElementById("main-content");
   mainContent.innerHTML = "";
   if (filtered.length === 0) {
-    mainContent.innerHTML = `<p class="text-center text-gray-500">No tools found matching your criteria.</p>`;
+    mainContent.innerHTML = `<p class="text-center" style="color: var(--text-tertiary);">No tools found matching your criteria.</p>`;
     return;
   }
   renderLinks(filtered);
@@ -88,12 +88,29 @@ function filterByCategory(categoryName) {
       }
     } else {
       btn.className =
-        "bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 hover:border-blue-300 transition-colors flex items-center space-x-2";
+        "px-6 py-3 rounded-lg font-medium transition-colors flex items-center space-x-2" +
+        " border-2" +
+        " hover:border-blue-300";
+      button.style.cssText = `
+        background-color: var(--card-bg);
+        color: var(--text-secondary);
+        border-color: var(--border-color);
+      `;
+      button.addEventListener("mouseover", () => {
+        button.style.backgroundColor = "var(--bg-tertiary)";
+      });
+      button.addEventListener("mouseout", () => {
+        button.style.backgroundColor = "var(--card-bg)";
+      });
       // Update count styling for inactive buttons
       const countSpan = btn.querySelector("span:last-child");
       if (countSpan) {
         countSpan.className =
-          "bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs";
+          "px-2 py-1 rounded-full text-xs";
+        countSpan.style.cssText = `
+          background-color: var(--bg-tertiary);
+          color: var(--text-secondary);
+        `;
       }
     }
   });
@@ -128,22 +145,23 @@ function renderLinks(categories) {
     categoryDiv.innerHTML = `
       <div class="flex items-center space-x-4 mb-8">
         <span class="text-4xl">${category.icon}</span>
-        <h2 class="text-3xl font-bold text-gray-900">${category.name}</h2>
+        <h2 class="text-3xl font-bold" style="color: var(--text-primary);">${category.name}</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         ${category.links
           .map(
             (link) => `
           <a href="${link.url}" target="_blank" 
-             class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 hover:border-blue-300 card-hover group"
+             class="rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border-2 hover:border-blue-300 card-hover group"
+             style="background-color: var(--card-bg); border-color: var(--card-border);"
              onclick="trackToolClick('${link.title}', '${category.name}')">
             <div class="flex items-start justify-between mb-4">
-              <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">${
+              <h3 class="text-xl font-semibold group-hover:text-blue-600 transition-colors" style="color: var(--text-primary);">${
                 link.title
               }</h3>
-              <i class="fas fa-external-link-alt text-gray-400 group-hover:text-blue-500 transition-colors"></i>
+              <i class="fas fa-external-link-alt group-hover:text-blue-500 transition-colors" style="color: var(--text-tertiary);"></i>
             </div>
-            <p class="text-gray-600 mb-4 leading-relaxed">${
+            <p class="mb-4 leading-relaxed" style="color: var(--text-secondary);">${
               link.description
             }</p>
             <div class="flex items-center justify-between">
@@ -190,7 +208,7 @@ function renderContributors(contributors) {
                 <img src="${contributor.avatar}" alt="${contributor.name}" 
                      class="contributor-avatar-modern flex-shrink-0" />
                 <div class="contributor-info flex-1 min-w-0">
-                  <h4 class="font-semibold text-gray-900 text-base mb-1 truncate">${
+                  <h4 class="font-semibold text-base mb-1 truncate" style="color: var(--text-primary);">${
                     contributor.name
                   }</h4>
                   ${
@@ -200,7 +218,7 @@ function renderContributors(contributors) {
                   }
                   ${
                     contributor.tagline
-                      ? `<p class="text-gray-600 text-xs contributor-tagline">"${contributor.tagline}"</p>`
+                      ? `<p class="text-xs contributor-tagline" style="color: var(--text-secondary);">"${contributor.tagline}"</p>`
                       : ""
                   }
                 </div>
@@ -280,11 +298,11 @@ function showTooltip(element) {
       <div class="tooltip-content-modal">
         <div class="flex justify-between items-center mb-3">
           <div class="tooltip-header-modal">Contributions (${contributionCount})</div>
-          <button class="text-gray-400 hover:text-gray-600 text-lg" onclick="closeTooltip()" title="Close">
+          <button class="text-lg transition-colors" onclick="closeTooltip()" title="Close" style="color: var(--text-tertiary);" onmouseover="this.style.color='var(--text-secondary)'" onmouseout="this.style.color='var(--text-tertiary)'">
             <i class="fas fa-times"></i>
           </button>
         </div>
-        <div class="mb-2 font-medium text-gray-700">${contributorName}</div>
+        <div class="mb-2 font-medium" style="color: var(--text-secondary);">${contributorName}</div>
         <ul class="tooltip-list-modal">
           ${
             contributions.length > 0
@@ -474,3 +492,38 @@ function updateFooterStats(starCount, forkCount) {
     });
   }
 }
+
+// Theme Toggle Functionality
+function initializeTheme() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+  
+  // Check for saved theme preference or default to light mode
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  
+  if (savedTheme === 'dark') {
+    body.setAttribute('data-theme', 'dark');
+    themeToggle.checked = false; // Unchecked = dark mode
+  } else {
+    body.removeAttribute('data-theme');
+    themeToggle.checked = true; // Checked = light mode
+  }
+  
+  // Add event listener for theme toggle
+  themeToggle.addEventListener('change', function() {
+    if (this.checked) {
+      // Switch to light mode
+      body.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      // Switch to dark mode
+      body.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+}
+
+// Initialize theme when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initializeTheme();
+});
