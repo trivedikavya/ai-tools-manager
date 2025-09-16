@@ -308,17 +308,17 @@
 
       [data-theme="vertex"] {
         /* Vertex - Technical, sharp, and intelligent */
-        --bg-primary: #0a0e0f;
-        --bg-secondary: #131b1d;
-        --bg-tertiary: #1e2729;
+        --bg-primary: #0f0a0a;
+        --bg-secondary: #1d1315;
+        --bg-tertiary: #291e20;
         --text-primary: #f0f6fc;
         --text-secondary: #c9d1d9;
         --text-tertiary: #8b949e;
         --border-color: #30363d;
-        --card-bg: #131b1d;
+        --card-bg: #1d1315;
         --card-border: #30363d;
         --card-shadow: rgba(248, 81, 73, 0.1);
-        --nav-bg: rgba(19, 27, 29, 0.95);
+        --nav-bg: rgba(31, 19, 21, 0.95);
         --nav-shadow: rgba(248, 81, 73, 0.1);
         --button-bg: #f85149;
         --button-text: #ffffff;
@@ -360,6 +360,61 @@
 
       .star-count i {
         animation: starTwinkle 2s ease-in-out infinite;
+      }
+
+      /* Mobile-specific star count styling */
+      @media (max-width: 640px) {
+        .star-count {
+          font-size: 9px !important;
+          padding: 1px 4px !important;
+          margin-left: 3px !important;
+          font-weight: 600 !important;
+        }
+        
+        .star-count i {
+          margin-right: 1px !important;
+          font-size: 7px !important;
+        }
+      }
+      
+      /* Extra small mobile devices */
+      @media (max-width: 480px) {
+        .star-count {
+          font-size: 10px !important;
+          padding: 1px 3px !important;
+          margin-left: 2px !important;
+        }
+        
+        .star-count i {
+          font-size: 10px !important;
+        }
+        
+        /* Mobile GitHub button adjustments */
+        #nav-github-button {
+          padding: 6px 12px !important;
+          font-size: 14px !important;
+        }
+        
+        #nav-github-button i {
+          font-size: 16px !important;
+        }
+      }
+
+      /* Very small mobile devices */
+      @media (max-width: 375px) {
+        #nav-github-button {
+          padding: 4px 8px !important;
+          font-size: 12px !important;
+        }
+        
+        #nav-github-button i {
+          font-size: 14px !important;
+        }
+        
+        .star-count {
+          font-size: 8px !important;
+          padding: 1px 2px !important;
+        }
       }
 
       @keyframes gradientShift {
@@ -1240,10 +1295,7 @@
             <a
               href="https://github.com/ArshdeepGrover/ai-tools-manager"
               target="_blank"
-              class="px-4 py-2 rounded-lg transition-colors flex items-center space-x-2"
-              style="background-color: var(--button-bg); color: var(--button-text);"
-              onmouseover="this.style.backgroundColor='var(--button-hover)'"
-              onmouseout="this.style.backgroundColor='var(--button-bg)'"
+              class="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors flex items-center space-x-2"
               id="nav-github-button"
             >
               <i class="fab fa-github"></i>
