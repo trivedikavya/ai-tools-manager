@@ -493,37 +493,65 @@ function updateFooterStats(starCount, forkCount) {
   }
 }
 
-// Theme Toggle Functionality
+// Theme Toggle Functionality (system-aware with persistence)
 function initializeTheme() {
   const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
-  
-  // Check for saved theme preference or default to light mode
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  
-  if (savedTheme === 'dark') {
-    body.setAttribute('data-theme', 'dark');
-    themeToggle.checked = false; // Unchecked = dark mode
-  } else {
-    body.removeAttribute('data-theme');
-    themeToggle.checked = true; // Checked = light mode
-  }
-  
-  // Add event listener for theme toggle
-  themeToggle.addEventListener('change', function() {
-    if (this.checked) {
-      // Switch to light mode
-      body.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
+  if (!themeToggle) return;
+
+  const root = document.documentElement; // apply data-theme on <html> to minimize FOUC
+  const mediaQuery = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getSavedPreference = () => localStorage.getItem('theme'); // 'light' | 'dark' | null
+  const inSystemMode = () => getSavedPreference() == null;
+
+  const applyTheme = (mode) => {
+    if (mode === 'dark') {
+      root.setAttribute('data-theme', 'dark');
     } else {
-      // Switch to dark mode
-      body.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
+      root.removeAttribute('data-theme');
     }
+  };
+
+  const syncToggle = (mode) => {
+    const isLight = mode === 'light';
+    themeToggle.checked = isLight; // Checked = light mode
+    themeToggle.setAttribute('aria-checked', String(isLight));
+  };
+
+  const effectiveTheme = () => {
+    const saved = getSavedPreference();
+    if (saved === 'light' || saved === 'dark') return saved;
+    // Default to system preference when no saved value
+    return mediaQuery && mediaQuery.matches ? 'dark' : 'light';
+  };
+
+  // Initial apply
+  const initial = effectiveTheme();
+  applyTheme(initial);
+  syncToggle(initial);
+
+  // Respond to system changes only when in "system mode" (no saved preference)
+  const handleSystemChange = (e) => {
+    if (!inSystemMode()) return;
+    const next = e.matches ? 'dark' : 'light';
+    applyTheme(next);
+    syncToggle(next);
+  };
+  if (mediaQuery && typeof mediaQuery.addEventListener === 'function') {
+    mediaQuery.addEventListener('change', handleSystemChange);
+  } else if (mediaQuery && typeof mediaQuery.addListener === 'function') {
+    // Safari fallback
+    mediaQuery.addListener(handleSystemChange);
+  }
+
+  // Toggle handler: user explicitly chooses light/dark (exits system mode)
+  themeToggle.addEventListener('change', function () {
+    const next = this.checked ? 'light' : 'dark';
+    applyTheme(next);
+    syncToggle(next);
+    localStorage.setItem('theme', next);
   });
 }
 
-// Initialize theme when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  initializeTheme();
-});
+// Initialize theme when DOM is loaded (runs alongside other DOMContentLoaded)
+document.addEventListener('DOMContentLoaded', initializeTheme);
