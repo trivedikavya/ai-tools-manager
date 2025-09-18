@@ -493,152 +493,65 @@ function updateFooterStats(starCount, forkCount) {
   }
 }
 
-// Advanced Professional Theme System
-const themes = {
-  'system': 'System Default',
-  'default-light': 'Default Light',
-  'arctic-blue': 'Arctic Blue',
-  'graphite': 'Graphite',
-  'proxima': 'Proxima',
-  'clarity': 'Clarity',
-  'vertex': 'Vertex'
-};
-
-// Make functions globally accessible
-window.toggleThemeDropdown = toggleThemeDropdown;
-window.changeTheme = changeTheme;
-
-function getSystemTheme() {
-  // Detect system preference
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'graphite'; // Use graphite for dark system preference
-  }
-  return 'default-light'; // Use default light for light system preference
-}
-
+// Theme Toggle Functionality (system-aware with persistence)
 function initializeTheme() {
-  // Check for saved theme preference or default to system
-  const savedTheme = localStorage.getItem('theme') || 'system';
-  const body = document.body;
-  
-  // Apply the saved theme
-  applyTheme(savedTheme);
-  
-  // Update the UI to reflect current theme
-  updateThemeSelector(savedTheme);
-  
-  // Listen for system theme changes if user has selected 'system'
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function() {
-      const currentTheme = localStorage.getItem('theme') || 'system';
-      if (currentTheme === 'system') {
-        applyTheme('system');
-        updateThemeSelector('system');
-      }
-    });
-  }
-  
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('theme-dropdown');
-    const selector = document.getElementById('theme-selector');
-    
-    if (!selector.contains(event.target) && !dropdown.contains(event.target)) {
-      closeThemeDropdown();
-    }
-  });
-}
+  const themeToggle = document.getElementById('theme-toggle');
+  if (!themeToggle) return;
 
-function applyTheme(themeName) {
-  const body = document.body;
-  
-  // Remove any existing theme attributes
-  body.removeAttribute('data-theme');
-  
-  // Apply new theme
-  if (themeName === 'system') {
-    const systemTheme = getSystemTheme();
-    if (systemTheme !== 'default-light') {
-      body.setAttribute('data-theme', systemTheme);
-    }
-  } else if (themeName !== 'default-light') {
-    body.setAttribute('data-theme', themeName);
-  }
-  
-  // Save to localStorage
-  localStorage.setItem('theme', themeName);
-}
+  const root = document.documentElement; // apply data-theme on <html> to minimize FOUC
+  const mediaQuery = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
-function updateThemeSelector(currentTheme) {
-  const currentThemeName = document.getElementById('current-theme-name');
-  const themeOptions = document.querySelectorAll('.theme-option');
-  
-  // Update current theme display
-  if (currentThemeName) {
-    currentThemeName.textContent = themes[currentTheme];
-  }
-  
-  // Update active state for theme options
-  themeOptions.forEach(option => {
-    const optionTheme = option.getAttribute('data-theme');
-    if (optionTheme === currentTheme) {
-      option.classList.add('active');
+  const getSavedPreference = () => localStorage.getItem('theme'); // 'light' | 'dark' | null
+  const inSystemMode = () => getSavedPreference() == null;
+
+  const applyTheme = (mode) => {
+    if (mode === 'dark') {
+      root.setAttribute('data-theme', 'dark');
     } else {
-      option.classList.remove('active');
+      root.removeAttribute('data-theme');
     }
+  };
+
+  const syncToggle = (mode) => {
+    const isLight = mode === 'light';
+    themeToggle.checked = isLight; // Checked = light mode
+    themeToggle.setAttribute('aria-checked', String(isLight));
+  };
+
+  const effectiveTheme = () => {
+    const saved = getSavedPreference();
+    if (saved === 'light' || saved === 'dark') return saved;
+    // Default to system preference when no saved value
+    return mediaQuery && mediaQuery.matches ? 'dark' : 'light';
+  };
+
+  // Initial apply
+  const initial = effectiveTheme();
+  applyTheme(initial);
+  syncToggle(initial);
+
+  // Respond to system changes only when in "system mode" (no saved preference)
+  const handleSystemChange = (e) => {
+    if (!inSystemMode()) return;
+    const next = e.matches ? 'dark' : 'light';
+    applyTheme(next);
+    syncToggle(next);
+  };
+  if (mediaQuery && typeof mediaQuery.addEventListener === 'function') {
+    mediaQuery.addEventListener('change', handleSystemChange);
+  } else if (mediaQuery && typeof mediaQuery.addListener === 'function') {
+    // Safari fallback
+    mediaQuery.addListener(handleSystemChange);
+  }
+
+  // Toggle handler: user explicitly chooses light/dark (exits system mode)
+  themeToggle.addEventListener('change', function () {
+    const next = this.checked ? 'light' : 'dark';
+    applyTheme(next);
+    syncToggle(next);
+    localStorage.setItem('theme', next);
   });
 }
 
-function toggleThemeDropdown() {
-  const dropdown = document.getElementById('theme-dropdown');
-  const isVisible = dropdown.classList.contains('show');
-  
-  if (isVisible) {
-    closeThemeDropdown();
-  } else {
-    openThemeDropdown();
-  }
-}
-
-function openThemeDropdown() {
-  const dropdown = document.getElementById('theme-dropdown');
-  dropdown.classList.remove('hidden');
-  
-  // Small delay to allow for transition
-  setTimeout(() => {
-    dropdown.classList.add('show');
-  }, 10);
-}
-
-function closeThemeDropdown() {
-  const dropdown = document.getElementById('theme-dropdown');
-  dropdown.classList.remove('show');
-  
-  setTimeout(() => {
-    dropdown.classList.add('hidden');
-  }, 200);
-}
-
-function changeTheme(themeName, displayName) {
-  // Apply the new theme
-  applyTheme(themeName);
-  
-  // Update the UI
-  updateThemeSelector(themeName);
-  
-  // Close the dropdown
-  closeThemeDropdown();
-  
-  // Optional: Track theme change analytics
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'theme_change', {
-      theme_name: themeName,
-      event_category: 'customization',
-    });
-  }
-}
-
-// Initialize theme when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  initializeTheme();
-});
+// Initialize theme when DOM is loaded (runs alongside other DOMContentLoaded)
+document.addEventListener('DOMContentLoaded', initializeTheme);
