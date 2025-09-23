@@ -166,6 +166,19 @@
         "Added ChatPDF under AI Productivity category"
       ],
       "role": "Contributor"
+    },
+    {
+      "name": "Sejal",
+      "github": "Sejal-collection",
+      "avatar": "https://github.com/Sejal-collection.png",
+      "linkedin": "sejal-kamble-567261291",
+      "tagline": "Design. Develop. Empower.",
+      "contributions": [
+        "Automated contributor onboarding with GitHub Actions and PR checklist bots",
+        "Added a scroll to the top button to reach the top of the page easily"
+      ],
+     "role": "Contributor"
     }
+
   ]
 }
