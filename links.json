@@ -185,6 +185,11 @@
           "title": "Napkin",
           "url": "https://napkin.ai",
           "description": "AI-powered visual storytelling and presentation tool"
+        },
+        {
+          "title": "GPTforSlides",
+          "url": "https://www.gptforslides.app/",
+          "description": "AI-powered tool that converts topics or text into professional Google Slides presentations"
         }
       ]
     },
