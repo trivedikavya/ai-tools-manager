@@ -177,17 +177,23 @@
         "Automated contributor onboarding with GitHub Actions and PR checklist bots",
         "Added a scroll to the top button to reach the top of the page easily"
       ],
-     "role": "Contributor"
+      "role": "Contributor"
     },
     {
       "name": "Ramazan Turan",
       "github": "MRamazan",
       "avatar": "https://avatars.githubusercontent.com/u/124697078?v=4",
       "tagline": "Tools Contributor",
-      "contributions": [
-        "Added Monica under AI Writing & Content category"
-      ],
-     "role": "Contributor"
+      "contributions": ["Added Monica under AI Writing & Content category"],
+      "role": "Contributor"
+    },
+    {
+      "name": "Ahammad Abdullah",
+      "github": "ahammadabdullah",
+      "avatar": "https://avatars.githubusercontent.com/u/77303694?v=4",
+      "tagline": "Its never too late",
+      "contributions": ["Added 16 tools in different categories"],
+      "role": "Contributor"
     }
   ]
 }
