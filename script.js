@@ -354,10 +354,24 @@ function trackCategoryFilter(categoryName) {
   }
 }
 
-// Mobile menu toggle
+// Simple mobile menu toggle
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobile-menu");
-  mobileMenu.classList.toggle("hidden");
+  const menuIcon = document.getElementById("menu-icon");
+  
+  if (mobileMenu.classList.contains("hidden")) {
+    // Show menu
+    mobileMenu.classList.remove("hidden");
+    menuIcon.classList.add("rotate");
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-times");
+  } else {
+    // Hide menu
+    mobileMenu.classList.add("hidden");
+    menuIcon.classList.remove("rotate");
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
+  }
 }
 
 // Initialize everything when DOM is loaded
@@ -376,7 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Close mobile menu if open
         const mobileMenu = document.getElementById("mobile-menu");
         if (!mobileMenu.classList.contains("hidden")) {
-          mobileMenu.classList.add("hidden");
+          toggleMobileMenu();
         }
       }
     });
