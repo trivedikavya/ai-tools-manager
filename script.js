@@ -148,7 +148,7 @@ function renderLinks(categories) {
 
     // Check if category is expanded
     const isExpanded = showAllCategories[category.name] || false;
-    const linksToShow = isExpanded ? category.links : category.links.slice(0, 5);
+    const linksToShow = isExpanded ? category.links : category.links.slice(0, 6);
 
     categoryDiv.innerHTML = `
       <div class="flex items-center space-x-4 mb-8">
@@ -183,7 +183,7 @@ function renderLinks(categories) {
           )
           .join("")}
       </div>
-      ${category.links.length > 5 ? `
+      ${category.links.length > 6 ? `
         <div class="text-center mt-6">
           <button class="show-more-btn" data-action="${isExpanded ? 'show-less' : 'show-more'}" onclick="toggleCategory('${category.name}')">
             <span>${isExpanded ? 'Show Less' : 'Show More'}</span>
@@ -205,8 +205,8 @@ function renderContributors(contributors) {
     totalContributorsText.textContent = contributors.length;
   }
 
-  // Limit contributors if not showing all
-  const contributorsToShow = showAllContributors ? contributors : contributors.slice(0, 8);
+  // Always show all contributors (pagination removed)
+  const contributorsToShow = contributors;
 
   // Render Modern Grid
   const modernGrid = document.getElementById("contributors-modern-grid");
@@ -278,20 +278,10 @@ function renderContributors(contributors) {
       .join("");
   }
 
-  // Add "Show All Contributors" button if there are more than 8
+  // Pagination removed - no button needed
   const showAllBtnContainer = document.getElementById("show-all-contributors-container");
   if (showAllBtnContainer) {
-    if (contributors.length > 8) {
-      showAllBtnContainer.innerHTML = `
-        <div class="text-center mt-8">
-          <button id="show-all-contributors-btn" class="show-more-btn" data-action="${showAllContributors ? 'show-less' : 'show-more'}" onclick="toggleShowAllContributors()">
-            <span>${showAllContributors ? 'Show Less' : 'Show All Contributors'}</span>
-          </button>
-        </div>
-      `;
-    } else {
-      showAllBtnContainer.innerHTML = "";
-    }
+    showAllBtnContainer.innerHTML = "";
   }
 }
 
