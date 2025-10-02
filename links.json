@@ -78,6 +78,11 @@
           "title": "Wordtune",
           "url": "https://www.wordtune.com/",
           "description": "An AI-powered writing companion that helps rephrase sentences, adjust tone, and shorten or expand text."
+        },
+        {
+          "title": "Simplified AI Writer",
+          "url": "https://simplified.com/ai-writer",
+          "description": "Free AI writer for blogs, social media, emails, and marketing copy"
         }
       ]
     },
