@@ -7,12 +7,12 @@ on:
 permissions:
   issues: write
   pull-requests: write
-  contents: read
+  contents: write
 
 jobs:
   notify-deployment:
     runs-on: ubuntu-latest
-    if: contains(github.event.label.name, 'deployed') && github.event.pull_request.merged == true
+    if: contains(github.event.label.name, 'deployed')
     steps:
       - name: Comment on PR deployment
         uses: actions/github-script@v6
