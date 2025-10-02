@@ -213,6 +213,15 @@
       "linkedin": "itspavant",
       "tagline": "Keep Hustling",
       "role": "Contributor"
+    },
+    {
+      "name": "Shivang Jaiswal",
+      "github": "JaiswalShivang",
+      "avatar": "https://github.com/JaiswalShivang.png",
+      "linkedin": "shivang-jaiswal-18809432b",
+      "tagline": "AI Tools Contributor",
+      "contributions": ["Added Simplified AI Writer to AI Writing & Content category"],
+      "role": "Contributor"
     }
   ]
 }
