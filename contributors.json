@@ -194,6 +194,13 @@
       "tagline": "Its never too late",
       "contributions": ["Added 16 tools in different categories"],
       "role": "Contributor"
+    },
+    {
+      "name": "Utkarsh",
+      "github": "Utkarsh-username",
+      "avatar": "https://github.com/Utkarsh-username.png",
+      "tagline": "Coding...",
+      "contributions": ["Added Zoho Show's Zia AI in presentations category"]
     }
   ]
 }
