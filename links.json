@@ -367,6 +367,16 @@
           "title": "Synthesia",
           "url": "https://www.synthesia.io/",
           "description": "An AI video generation platform that creates videos with realistic AI avatars and voiceovers in minutes."
+        },
+        {
+          "title": "15.ai",
+          "url": "https://15.dev/",
+          "description": "Generate character speech (TTS)"
+        },
+        {
+          "title": "Murf",
+          "url": "https://murf.ai/",
+          "description": "Realistic AI voice & TTS tool"
         }
       ]
     },
