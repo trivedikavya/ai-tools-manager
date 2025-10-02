@@ -78,6 +78,11 @@
           "title": "Wordtune",
           "url": "https://www.wordtune.com/",
           "description": "An AI-powered writing companion that helps rephrase sentences, adjust tone, and shorten or expand text."
+        },
+        {
+          "title": "Simplified AI Writer",
+          "url": "https://simplified.com/ai-writer",
+          "description": "Free AI writer for blogs, social media, emails, and marketing copy"
         }
       ]
     },
@@ -185,6 +190,16 @@
           "title": "Napkin",
           "url": "https://napkin.ai",
           "description": "AI-powered visual storytelling and presentation tool"
+        },
+        {
+          "title": "GPTforSlides",
+          "url": "https://www.gptforslides.app/",
+          "description": "AI-powered tool that converts topics or text into professional Google Slides presentations"
+        },
+        {
+          "title": "Zoho Show Zia AI",
+          "url": "https://www.zoho.com/show/",
+          "description": "AI-integrated presentaton builder"
         }
       ]
     },
@@ -362,6 +377,16 @@
           "title": "Synthesia",
           "url": "https://www.synthesia.io/",
           "description": "An AI video generation platform that creates videos with realistic AI avatars and voiceovers in minutes."
+        },
+        {
+          "title": "15.ai",
+          "url": "https://15.dev/",
+          "description": "Generate character speech (TTS)"
+        },
+        {
+          "title": "Murf",
+          "url": "https://murf.ai/",
+          "description": "Realistic AI voice & TTS tool"
         }
       ]
     },
