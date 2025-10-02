@@ -195,6 +195,11 @@
           "title": "GPTforSlides",
           "url": "https://www.gptforslides.app/",
           "description": "AI-powered tool that converts topics or text into professional Google Slides presentations"
+        },
+        {
+          "title": "Zoho Show Zia AI",
+          "url": "https://www.zoho.com/show/",
+          "description": "AI-integrated presentaton builder"
         }
       ]
     },

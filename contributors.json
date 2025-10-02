@@ -222,6 +222,14 @@
       "tagline": "AI Tools Contributor",
       "contributions": ["Added Simplified AI Writer to AI Writing & Content category"],
       "role": "Contributor"
+    },
+    {
+      "name": "Utkarsh",
+      "github": "Utkarsh-username",
+      "avatar": "https://github.com/Utkarsh-username.png",
+      "tagline": "Coding...",
+      "contributions": ["Added Zoho Show's Zia AI in presentations category"],
+      "role": "Contributor"
     }
   ]
 }
