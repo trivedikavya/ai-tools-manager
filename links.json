@@ -234,6 +234,11 @@
           "url": "https://github.com/features/copilot",
           "description": "AI code assistant with free trial"
         },
+            {
+  "title": "Qwen AI",
+  "url": "https://chat.qwen.ai/",
+  "description": "Free AI Assistant "
+},
         {
           "title": "Replit AI",
           "url": "https://replit.com",
@@ -537,6 +542,11 @@
           "title": "Google AI Studio",
           "url": "https://aistudio.google.com",
           "description": "Web-based IDE for prototyping with Gemini AI models"
+        },
+        {
+          "title": "Lyzr.ai",
+          "url": "https://www.lyzr.ai/",
+          "description": "Build and deploy AI agents to automate workflows with free plan"
         },
         {
           "title": "Hugging Face Spaces",
