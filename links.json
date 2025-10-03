@@ -83,6 +83,11 @@
           "title": "Simplified AI Writer",
           "url": "https://simplified.com/ai-writer",
           "description": "Free AI writer for blogs, social media, emails, and marketing copy"
+        },
+        {
+          "title": "Promptly AI",
+          "url": "https://chromewebstore.google.com/detail/promptly-ai/jjfoaldlbbcfgkhbfmadjjelphbgmngg?hl=en",
+          "description": "Promptly AI is a Chrome extension that helps you improve, manage, and reuse your prompts across AI chat interfaces (ChatGPT, Claude, Perplexity, etc.)"
         }
       ]
     },
