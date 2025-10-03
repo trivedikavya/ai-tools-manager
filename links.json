@@ -104,6 +104,7 @@
           "url": "https://originality.ai/",
           "description": "Originality.ai is a content quality tool that detects AI-generated text, checks plagiarism, and performs fact checking to ensure credible, original writing."
         }
+
       ]
     },
     {
@@ -232,6 +233,11 @@
           "url": "https://github.com/features/copilot",
           "description": "AI code assistant with free trial"
         },
+            {
+  "title": "Qwen AI",
+  "url": "https://chat.qwen.ai/",
+  "description": "Free AI Assistant "
+},
         {
           "title": "Qwen AI",
           "url": "https://chat.qwen.ai/",
