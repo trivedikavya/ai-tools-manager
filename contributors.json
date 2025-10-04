@@ -241,7 +241,11 @@
       "github": "trivedikavya",
       "avatar": "https://avatars.githubusercontent.com/u/149308388?v=4",
       "linkedin": "trivedikavya",
-      "contributions": ["Added Gemini and another AI tool to the collection" , "added project goal section in readme file"],
+      "tagline": "AI Enthusiast",
+      "contributions": [
+        "Added Gemini, Poe , AISEO AI tool to the collection" , 
+        "Added project goal section in readme file" , 
+      "Fixed Tailwind CSS loading issues in some browsers"],
       "website": "https://kavyatrivediterminalportfolio.netlify.app/",
       "role": "Contributor"
     },
