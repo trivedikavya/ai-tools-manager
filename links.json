@@ -103,7 +103,12 @@
           "title": "Originality AI",
           "url": "https://originality.ai/",
           "description": "Originality.ai is a content quality tool that detects AI-generated text, checks plagiarism, and performs fact checking to ensure credible, original writing."
-        }
+        },
+        {
+          "title": "AISEO",
+           "url": "https://aiseo.ai/",
+          "description": "An AI-powered writing assistant for generating SEO-optimized content, including articles, blog posts, and marketing copy."
+}
 
       ]
     },
