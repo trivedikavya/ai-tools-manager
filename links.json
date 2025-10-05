@@ -238,11 +238,6 @@
           "url": "https://github.com/features/copilot",
           "description": "AI code assistant with free trial"
         },
-            {
-  "title": "Qwen AI",
-  "url": "https://chat.qwen.ai/",
-  "description": "Free AI Assistant "
-},
         {
           "title": "Qwen AI",
           "url": "https://chat.qwen.ai/",
@@ -519,6 +514,11 @@
           "title": "Wobo AI",
           "url": "https://www.wobo.ai/",
           "description": "Wobo AI helps you land your dream job with AI-powered job search, ATS-friendly resumes, and smart cover letters."
+        },
+        {
+        "title": "Pi (Inflection AI)",
+        "url": "https://pi.ai",
+        "description": "Empathetic AI assistant that offers calm, reflective conversations to support mindfulness and productivity."
         }
       ]
     },
@@ -618,6 +618,11 @@
           "title": "Jan",
           "url": "https://jan.ai/",
           "description": "Open-source local ChatGPT alternative"
+        },
+        {
+          "title": "DeepSeek",
+          "url": "https://github.com/deepseek-ai",
+          "description": "Open-source DeepSeek models for local/edge AI"
         }
       ]
     }
