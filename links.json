@@ -210,6 +210,31 @@
           "title": "Looka",
           "url": "https://looka.com/",
           "description": "AI-powered platform for designing logos and building a brand identity."
+        },
+        {
+          "title": "Playground AI",
+          "url": "https://playgroundai.com/",
+          "description": "500 images/day. User-friendly image generation using Stable Diffusion and DALL-E models."
+        },
+        {
+          "title": "Microsoft Designer",
+          "url": "https://designer.microsoft.com/",
+          "description": "Unlimited with Microsoft account. AI graphic design platform for social media and marketing visuals."
+        },
+        {
+          "title": "Craiyon",
+          "url": "https://www.craiyon.com/",
+          "description": "Unlimited generations. Lightweight AI image generator for fun illustrations and memes."
+        },
+        {
+          "title": "Artbreeder",
+          "url": "https://www.artbreeder.com/",
+          "description": "Free community access. AI tool for blending and evolving images in real-time."
+        },
+        {
+          "title": "NightCafe Studio",
+          "url": "https://creator.nightcafe.studio/",
+          "description": "5 credits/day. AI art generator with multiple models and community challenges."
         }
       ]
     },
@@ -251,6 +276,11 @@
           "title": "Zoho Show Zia AI",
           "url": "https://www.zoho.com/show/",
           "description": "AI-integrated presentaton builder"
+        },
+        {
+          "title": "PowerPoint Speaker Coach",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/powerpoint",
+          "description": "Free with Microsoft 365 account. AI feedback tool for improving public speaking in presentations."
         }
       ]
     },
