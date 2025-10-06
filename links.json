@@ -387,7 +387,28 @@
           "title": "Sourcegraph Cody",
           "url": "https://sourcegraph.com/cody",
           "description": "An AI coding assistant that understands your entire codebase to help write, fix, and explain code."
-        }
+        },
+        {
+      "title": "Codeium",
+      "url": "https://codeium.com/",
+      "description": "Free AI coding assistant with IDE integration and code completion. Unlimited for individuals."
+    },
+    {
+      "title": "Replit Ghostwriter",
+      "url": "https://replit.com/site/ghostwriter",
+      "description": "AI coding companion for generating and debugging code in Replit. Free in Replit core."
+    },
+    {
+      "title": "Mutable AI",
+      "url": "https://www.mutable.ai/",
+      "description": "AI for refactoring legacy code and generating documentation. Free tier for basic refactoring."
+    },
+    {
+      "title": "Continue",
+      "url": "https://www.continue.dev/",
+      "description": "Open-source AI coding assistant with in-IDE autocomplete. Fully free."
+    }
+
       ]
     },
     {
@@ -473,7 +494,17 @@
           "title": "Murf",
           "url": "https://murf.ai/",
           "description": "Realistic AI voice & TTS tool"
-        }
+        },
+            {
+      "title": "Play.ht",
+      "url": "https://play.ht/",
+      "description": "Text-to-speech platform for business narration and podcasts. Offers 12,500 characters/month."
+    },
+    {
+      "title": "Resemble AI",
+      "url": "https://www.resemble.ai/",
+      "description": "Synthetic speech tool for custom voices and interactive experiences. Offers 1,000 words/month."
+    }
       ]
     },
     {
