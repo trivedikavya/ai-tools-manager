@@ -108,8 +108,32 @@
           "title": "AISEO",
            "url": "https://aiseo.ai/",
           "description": "An AI-powered writing assistant for generating SEO-optimized content, including articles, blog posts, and marketing copy."
-}
-
+        },
+        {
+          "title": "Writesonic",
+          "url": "https://writesonic.com/",
+          "description": "AI content generator for SEO-optimized blog posts, landing pages, and product descriptions. Free plan offers 10,000 words/month."
+        },
+        {
+          "title": "HyperWrite",
+          "url": "https://www.hyperwriteai.com/",
+          "description": "AI writing assistant for brainstorming, outlining, and drafting content, with unlimited basic generations on the free plan."
+        },
+        {
+          "title": "Yomu",
+          "url": "https://www.yomu.ai/",
+          "description": "AI writing assistant for academic writing, structuring essays and citations. Free for individuals with limits."
+        },
+        {
+          "title": "ContentBot",
+          "url": "https://www.contentbot.ai/",
+          "description": "Versatile AI content creator for eCommerce product descriptions and blog posts. Free plan includes 2,000 words/month."
+        },
+        {
+          "title": "Lately",
+          "url": "https://www.lately.ai/",
+          "description": "AI-powered social media post generator with scheduling and analytics. Offers a free trial."
+        }
       ]
     },
     {
@@ -185,6 +209,31 @@
           "title": "Looka",
           "url": "https://looka.com/",
           "description": "AI-powered platform for designing logos and building a brand identity."
+        },
+        {
+          "title": "Playground AI",
+          "url": "https://playgroundai.com/",
+          "description": "500 images/day. User-friendly image generation using Stable Diffusion and DALL-E models."
+        },
+        {
+          "title": "Microsoft Designer",
+          "url": "https://designer.microsoft.com/",
+          "description": "Unlimited with Microsoft account. AI graphic design platform for social media and marketing visuals."
+        },
+        {
+          "title": "Craiyon",
+          "url": "https://www.craiyon.com/",
+          "description": "Unlimited generations. Lightweight AI image generator for fun illustrations and memes."
+        },
+        {
+          "title": "Artbreeder",
+          "url": "https://www.artbreeder.com/",
+          "description": "Free community access. AI tool for blending and evolving images in real-time."
+        },
+        {
+          "title": "NightCafe Studio",
+          "url": "https://creator.nightcafe.studio/",
+          "description": "5 credits/day. AI art generator with multiple models and community challenges."
         }
       ]
     },
@@ -226,6 +275,11 @@
           "title": "Zoho Show Zia AI",
           "url": "https://www.zoho.com/show/",
           "description": "AI-integrated presentaton builder"
+        },
+        {
+          "title": "PowerPoint Speaker Coach",
+          "url": "https://www.microsoft.com/en-us/microsoft-365/powerpoint",
+          "description": "Free with Microsoft 365 account. AI feedback tool for improving public speaking in presentations."
         }
       ]
     },
@@ -238,11 +292,6 @@
           "url": "https://github.com/features/copilot",
           "description": "AI code assistant with free trial"
         },
-            {
-  "title": "Qwen AI",
-  "url": "https://chat.qwen.ai/",
-  "description": "Free AI Assistant "
-},
         {
           "title": "Qwen AI",
           "url": "https://chat.qwen.ai/",
@@ -337,7 +386,28 @@
           "title": "Sourcegraph Cody",
           "url": "https://sourcegraph.com/cody",
           "description": "An AI coding assistant that understands your entire codebase to help write, fix, and explain code."
-        }
+        },
+        {
+      "title": "Codeium",
+      "url": "https://codeium.com/",
+      "description": "Free AI coding assistant with IDE integration and code completion. Unlimited for individuals."
+    },
+    {
+      "title": "Replit Ghostwriter",
+      "url": "https://replit.com/site/ghostwriter",
+      "description": "AI coding companion for generating and debugging code in Replit. Free in Replit core."
+    },
+    {
+      "title": "Mutable AI",
+      "url": "https://www.mutable.ai/",
+      "description": "AI for refactoring legacy code and generating documentation. Free tier for basic refactoring."
+    },
+    {
+      "title": "Continue",
+      "url": "https://www.continue.dev/",
+      "description": "Open-source AI coding assistant with in-IDE autocomplete. Fully free."
+    }
+
       ]
     },
     {
@@ -423,7 +493,17 @@
           "title": "Murf",
           "url": "https://murf.ai/",
           "description": "Realistic AI voice & TTS tool"
-        }
+        },
+            {
+      "title": "Play.ht",
+      "url": "https://play.ht/",
+      "description": "Text-to-speech platform for business narration and podcasts. Offers 12,500 characters/month."
+    },
+    {
+      "title": "Resemble AI",
+      "url": "https://www.resemble.ai/",
+      "description": "Synthetic speech tool for custom voices and interactive experiences. Offers 1,000 words/month."
+    }
       ]
     },
     {
@@ -519,6 +599,11 @@
           "title": "Wobo AI",
           "url": "https://www.wobo.ai/",
           "description": "Wobo AI helps you land your dream job with AI-powered job search, ATS-friendly resumes, and smart cover letters."
+        },
+        {
+        "title": "Pi (Inflection AI)",
+        "url": "https://pi.ai",
+        "description": "Empathetic AI assistant that offers calm, reflective conversations to support mindfulness and productivity."
         }
       ]
     },
@@ -618,6 +703,11 @@
           "title": "Jan",
           "url": "https://jan.ai/",
           "description": "Open-source local ChatGPT alternative"
+        },
+        {
+          "title": "DeepSeek",
+          "url": "https://github.com/deepseek-ai",
+          "description": "Open-source DeepSeek models for local/edge AI"
         }
       ]
     }
