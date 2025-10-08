@@ -393,11 +393,11 @@
           "description": "An AI coding assistant that understands your entire codebase to help write, fix, and explain code."
         },
         {
-      "title": "Codeium",
-      "url": "https://codeium.com/",
-      "description": "Free AI coding assistant with IDE integration and code completion. Unlimited for individuals."
-    },
-    {
+          "title": "Codeium",
+          "url": "https://codeium.com/",
+          "description": "Free AI coding assistant with IDE integration and code completion. Unlimited for individuals."
+       },
+       {
       "title": "Replit Ghostwriter",
       "url": "https://replit.com/site/ghostwriter",
       "description": "AI coding companion for generating and debugging code in Replit. Free in Replit core."
@@ -650,7 +650,6 @@
       "url": "https://wisprflow.ai/",
       "description": "Voice-first AI for capturing thoughts into notes. Free voice notes."
     }
-        }
       ]
     },
     {
