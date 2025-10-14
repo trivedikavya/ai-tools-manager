@@ -7,7 +7,7 @@ let allContributors = [];
 
 async function loadLinks() {
   try {
-    const response = await fetch("links.json");
+    const response = await fetch("data/links.json");
     const data = await response.json();
     allCategories = data.categories;
     renderCategoryFilters(allCategories); // populate dropdown
@@ -22,7 +22,7 @@ async function loadLinks() {
 
 async function loadContributors() {
   try {
-    const response = await fetch("contributors.json");
+    const response = await fetch("data/contributors.json");
     const data = await response.json();
     allContributors = data.contributors;
     renderContributors(allContributors);

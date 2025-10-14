@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "AI Tools Directory",
   "scripts": {
-    "check-duplicates": "node validate-links.js --duplicates-only",
-    "validate": "node validate-links.js"
+    "check-duplicates": "node scripts/validate-links.js --duplicates-only",
+    "validate": "node scripts/validate-links.js",
+    "validate-contributors": "node scripts/validate-contributors.js"
   },
   "author": "Arshdeep Singh",
   "license": "MIT"

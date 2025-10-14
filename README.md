@@ -42,7 +42,7 @@ We welcome contributions from everyone! Here's how you can help improve this pro
    cd ai-tools-manager
    ```
 
-3. **Add your tool to `links.json`**
+3. **Add your tool to `data/links.json`**
    - Find the appropriate category or create a new one
    - Add your tool following this format:
 
@@ -70,7 +70,7 @@ We welcome contributions from everyone! Here's how you can help improve this pro
 
 When you contribute, add yourself to the contributors list:
 
-1. **Add your information to `contributors.json`**:
+1. **Add your information to `data/contributors.json`**:
 
    ```json
    {
@@ -91,25 +91,27 @@ ai-tools-collection/
 ├── index.html              # Main HTML file
 ├── style.css               # Styling and animations
 ├── script.js               # JavaScript functionality
-├── links.json              # AI tools database
-├── contributors.json       # Contributors database
 ├── manifest.json           # PWA manifest
 ├── package.json            # Project configuration
 ├── README.md               # This file
-├── CONTRIBUTING.md         # Contribution guidelines
-├── COMMIT_GUIDELINES.md    # Commit message standards
-├── CONTRIBUTOR_EXAMPLE.md  # Contributor profile template
+├── data/                   # Data files
+│   ├── links.json          # AI tools database
+│   └── contributors.json   # Contributors database
+├── docs/                   # Documentation
+│   ├── CONTRIBUTING.md     # Contribution guidelines
+│   ├── COMMIT_GUIDELINES.md # Commit message standards
+│   └── CONTRIBUTOR_EXAMPLE.md # Contributor profile template
+├── scripts/                # Validation scripts
+│   ├── validate-links.js   # Links validation
+│   └── validate-contributors.js # Contributors validation
 ├── assets/                 # Project assets
 │   ├── favicon.svg         # Site favicon
 │   ├── og-image.svg        # Social media image
 │   └── README.md           # Assets documentation
-├── src/                    # Source files
-│   ├── assets/             # Additional assets
-│   ├── scripts/            # JavaScript modules
-│   └── templates/          # HTML templates
-└── tests/                  # Test files
-    ├── integration/        # Integration tests
-    └── unit/               # Unit tests
+└── .github/                # GitHub configuration
+    ├── workflows/          # CI/CD workflows
+    ├── ISSUE_TEMPLATE/     # Issue templates
+    └── hooks/              # Git hooks
 ```
 
 ## 🛠️ Development Setup
@@ -135,6 +137,9 @@ ai-tools-collection/
    
    # Validate all links and data
    npm run validate
+   
+   # Validate contributors data
+   npm run validate-contributors
    ```
 
 4. **Open in your browser**
@@ -153,8 +158,8 @@ ai-tools-collection/
    ```
 
 5. **Make your changes**
-   - Edit `links.json` to add/modify tools
-   - Update `contributors.json` to add yourself
+   - Edit `data/links.json` to add/modify tools
+   - Update `data/contributors.json` to add yourself
    - Modify CSS/JS as needed
 
 ## 🔧 Validation & Quality Assurance
