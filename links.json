@@ -671,10 +671,10 @@
       "description": "Voice-first AI for capturing thoughts into notes. Free voice notes."
     },
     {
-          "title": "JustDone",
-          "url": "https://justdone.ai", 
-          "description": "Detects AI-generated content, checks similarity / plagiarism, helpful for content validation and authenticity." 
-        }
+      "title": "JustDone",
+      "url": "https://justdone.ai", 
+      "description": "Detects AI-generated content, checks similarity / plagiarism, helpful for content validation and authenticity." 
+    }
       ]
     },
     {
