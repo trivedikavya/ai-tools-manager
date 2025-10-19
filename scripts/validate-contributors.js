@@ -79,7 +79,7 @@ async function validateContributors() {
   console.log("🔍 Starting contributors validation...\n");
 
   try {
-    const data = JSON.parse(fs.readFileSync("contributors.json", "utf8"));
+    const data = JSON.parse(fs.readFileSync("data/contributors.json", "utf8"));
     let hasError = false;
     let warningCount = 0;
 
@@ -324,7 +324,7 @@ function checkContributorsOnly() {
   console.log("🔍 Quick contributors check...\n");
 
   try {
-    const data = JSON.parse(fs.readFileSync("contributors.json", "utf8"));
+    const data = JSON.parse(fs.readFileSync("data/contributors.json", "utf8"));
     let hasError = false;
 
     if (!data.contributors || !Array.isArray(data.contributors)) {

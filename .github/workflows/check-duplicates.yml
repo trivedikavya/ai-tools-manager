@@ -3,7 +3,7 @@ name: Check Duplicates
 on:
   pull_request:
     paths:
-      - "links.json"
+      - "data/links.json"
 
 permissions:
   pull-requests: write
@@ -24,7 +24,7 @@ jobs:
       - name: Check for duplicate links
         id: check
         run: |
-          if node validate-links.js --duplicates-only; then
+          if node scripts/validate-links.js --duplicates-only; then
             echo "result=success" >> $GITHUB_OUTPUT
           else
             echo "result=failure" >> $GITHUB_OUTPUT
