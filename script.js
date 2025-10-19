@@ -24,11 +24,20 @@ async function loadContributors() {
   try {
     const response = await fetch("data/contributors.json");
     const data = await response.json();
-    allContributors = data.contributors;
-    renderContributors(allContributors);
-    updateContributorStats(data.contributors.length);
+    
+    if (data && Array.isArray(data.contributors) && data.contributors.length > 0) {
+      allContributors = data.contributors;
+      renderContributors(allContributors);
+      updateContributorStats(data.contributors.length);
+      updateFooterContributorsCount(data.contributors.length);
+    } else {
+      throw new Error("No contributors data found");
+    }
   } catch (error) {
     console.error("Error loading contributors:", error);
+    // Fallback with dash
+    allContributors = [];
+    updateFooterContributorsCount("-");
   }
 }
 
@@ -313,6 +322,22 @@ function updateContributorStats(count) {
   }
 }
 
+function updateFooterContributorsCount(count) {
+  // Update ALL footer contributors count elements
+  const footerContributorsCounts = document.querySelectorAll('[id="footer-contributors-count"]');
+  footerContributorsCounts.forEach(element => {
+    // Show count or dash if invalid
+    const displayCount = (count && count > 0) ? count : "-";
+    element.textContent = displayCount;
+    if (displayCount !== "-") {
+      element.classList.add("animate-pulse");
+      setTimeout(() => {
+        element.classList.remove("animate-pulse");
+      }, 1000);
+    }
+  });
+}
+
 // Tooltip functionality
 function showTooltip(element) {
   const contributorName = element.dataset.contributorName;
@@ -479,29 +504,42 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadGitHubStars() {
   const owner = "ArshdeepGrover";
   const repo = "ai-tools-manager";
+  
+  // Set initial loading state
+  updateFooterStats("-", "-", "-");
+  
   try {
     const response = await fetch(
       "https://api.github.com/repos/ArshdeepGrover/ai-tools-manager"
     );
+    
     const data = await response.json();
-    const starCount = data.stargazers_count;
-    const forkCount = data.forks_count;
+    const starCount = data.stargazers_count || "-";
+    const forkCount = data.forks_count || "-";
 
     // Get open issues
-    const issuesRes = await fetch(
-      `https://api.github.com/repos/${owner}/${repo}/issues?state=open`
-    );
-    const issuesData = await issuesRes.json();
-    const issuesCount = issuesData.filter((item) => !item.pull_request).length; // exclude PRs 
+    let issuesCount = "-";
+    try {
+      const issuesRes = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/issues?state=open`
+      );
+      const issuesData = await issuesRes.json();
+      issuesCount = Array.isArray(issuesData) ? issuesData.filter((item) => !item.pull_request).length : "-";
+    } catch (e) {
+      console.warn("Could not fetch issues count:", e);
+    }
 
     // Update all GitHub star buttons
-    updateGitHubButtons(starCount);
+    if (starCount !== "-") {
+      updateGitHubButtons(starCount);
+    }
 
     // Update footer stats
-    updateFooterStats(starCount, forkCount , issuesCount);
+    updateFooterStats(starCount, forkCount, issuesCount);
   } catch (error) {
     console.error("Error fetching GitHub stats:", error);
-    // Fallback - just show the buttons without star count
+    // Keep loading state ("-") if API fails
+    updateFooterStats("-", "-", "-");
   }
 }
 
@@ -541,7 +579,7 @@ function updateGitHubButtons(starCount) {
   }
 }
 
-function updateFooterStats(starCount, forkCount , issuesCount) {
+function updateFooterStats(starCount, forkCount, issuesCount) {
   // Update ALL footer star count elements (there might be multiple)
   const footerStarCounts = document.querySelectorAll('[id="footer-star-count"]');
   footerStarCounts.forEach(element => {
