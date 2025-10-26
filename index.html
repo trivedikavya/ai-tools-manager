@@ -849,10 +849,16 @@
         margin: 0 8px;
         margin-right: 12px;
       }
+      
+
 
       @media (min-width: 900px) {
         .theme-toggle-button {
           margin-right: 0px;
+        }
+        
+        .connection-status {
+          margin-left: 16px;
         }
       }
 
@@ -890,6 +896,84 @@
       @media (max-width: 350px) {
         .theme-toggle-button {
           margin-right: 50px;
+        }
+      }
+
+      /* Status Bar Styles */
+      .connection-status {
+        transition: all 0.3s ease;
+      }
+      
+      .connection-status.offline {
+        background-color: #fef3c7 !important;
+        color: #d97706 !important;
+      }
+      
+      .connection-status.offline .w-2 {
+        background-color: #f59e0b !important;
+      }
+      
+      [data-theme="dark"] .connection-status.offline {
+        background-color: #451a03 !important;
+        color: #fbbf24 !important;
+      }
+      
+      #offline-banner {
+        transition: all 0.3s ease;
+      }
+      
+      [data-theme="dark"] #offline-banner {
+        background-color: #451a03 !important;
+        border-color: #92400e !important;
+      }
+      
+      [data-theme="dark"] #offline-banner .text-orange-800 {
+        color: #fbbf24 !important;
+      }
+      
+      [data-theme="dark"] #offline-banner .text-orange-600 {
+        color: #f59e0b !important;
+      }
+      
+      [data-theme="dark"] #offline-banner .fas {
+        color: #f59e0b !important;
+      }
+      
+      /* Sync icon animation */
+      .sync-spinning {
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Status Widget */
+      #status-widget {
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      
+      #status-widget.offline #status-dot {
+        background-color: #f59e0b !important;
+      }
+      
+      @media (max-width: 640px) {
+        #status-widget {
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 11px;
+          padding: 8px 12px;
+        }
+        
+        #status-widget .flex {
+          gap: 8px;
+        }
+        
+        #status-widget .text-xs {
+          font-size: 10px;
         }
       }
     </style>
@@ -956,32 +1040,30 @@
               >About</a
             >
             
-            <!-- Connection Status Indicator -->
-            <div class="connection-status flex items-center text-green-600 text-sm">
-              <i class="fas fa-wifi text-green-500 mr-2"></i>Online
-            </div>
+
           </div>
 
-      <!-- Theme Toggle Button -->
-      <div class="flex items-center">
-        <button id="theme-toggle-btn" class="theme-toggle-button" aria-label="Toggle dark mode" title="Toggle theme">
-          <i class="fas fa-moon" id="theme-icon"></i>
-        </button>
-      </div>
+          <!-- Right side buttons -->
+          <div class="flex items-center space-x-3">
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle-btn" class="theme-toggle-button" aria-label="Toggle dark mode" title="Toggle theme">
+              <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
 
-      <!-- GitHub Star Button -->
-      <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank" 
-         class="hidden sm:flex px-4 py-2 rounded-lg transition-colors items-center space-x-2"
-         style="background-color: var(--button-bg); color: var(--button-text);"
-         onmouseover="this.style.backgroundColor='var(--button-hover)'"
-         onmouseout="this.style.backgroundColor='var(--button-bg)'"
-         id="nav-github-button">
-        <i class="fab fa-github"></i>
-        <span class="hidden sm:inline">Star on GitHub</span>
-        <span class="star-count text-white px-3 py-1 rounded-full text-xs font-bold ml-2 hidden" id="nav-star-count">
-          <i class="fas fa-star mr-1"></i>0
-        </span>
-      </a>
+            <!-- GitHub Star Button -->
+            <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank" 
+               class="hidden sm:flex px-4 py-2 rounded-lg transition-colors items-center space-x-2"
+               style="background-color: var(--button-bg); color: var(--button-text);"
+               onmouseover="this.style.backgroundColor='var(--button-hover)'"
+               onmouseout="this.style.backgroundColor='var(--button-bg)'"
+               id="nav-github-button">
+              <i class="fab fa-github"></i>
+              <span class="hidden sm:inline">Star on GitHub</span>
+              <span class="star-count text-white px-3 py-1 rounded-full text-xs font-bold ml-2 hidden" id="nav-star-count">
+                <i class="fas fa-star mr-1"></i>0
+              </span>
+            </a>
+          </div>
     </div>
 
   </div>
@@ -1040,76 +1122,37 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="max-w-4xl mx-auto">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Discover the Best
-            <span
-              class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"
-            >
-              AI Tools
-            </span>
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 text-blue-100">
-            A curated collection of professional AI tools for developers,
-            designers, and creators. Open source and community-driven.
-          </p>
-
-          <!-- Stats -->
-          <!-- <div class="grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto">
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold" id="total-tools">
-                28+
-              </div>
-              <div class="text-blue-200">AI Tools</div>
-            </div>
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold">6</div>
-              <div class="text-blue-200">Categories</div>
-            </div>
-            <div class="text-center">
-              <div
-                class="text-3xl md:text-4xl font-bold"
-                id="total-contributors"
-              >
-                1+
-              </div>
-              <div class="text-blue-200">Contributors</div>
-            </div>
-          </div> -->
-
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#tools"
-              class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-            >
-              Explore Tools
-            </a>
-            <a
-              href="https://github.com/ArshdeepGrover/ai-tools-manager"
-              target="_blank"
-              class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center space-x-2"
-              id="hero-github-button"
-            >
-              Contribute
-            </a>
-          </div>
+    <section class="gradient-bg text-white py-12">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+          Discover the Best
+          <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            AI Tools
+          </span>
+        </h1>
+        <p class="text-lg md:text-xl mb-6 text-blue-100 max-w-2xl mx-auto">
+          A curated collection of professional AI tools for developers, designers, and creators. Open source and community-driven.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#tools" class="bg-white text-blue-600 px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            Explore Tools
+          </a>
+          <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank" class="border-2 border-white text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors" id="hero-github-button">
+            Contribute
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Category Filter Section -->
-    <section id="categories" class="py-16" style="background-color: var(--bg-secondary);">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">
+    <section id="categories" class="py-10" style="background-color: var(--bg-secondary);">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">
             Browse by Category
           </h2>
-          <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
-            Find the perfect AI tools for your specific needs. Filter by
-            category to discover tools tailored to your workflow.
+          <p class="max-w-xl mx-auto text-sm" style="color: var(--text-secondary);">
+            Find the perfect AI tools for your specific needs. Filter by category to discover tools tailored to your workflow.
           </p>
         </div>
 
@@ -1142,18 +1185,11 @@
             </div>
           </div>
           
-          <!-- Offline Indicator & Sync Status -->
-          <div class="mt-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <!-- Offline Indicator -->
-            <div class="offline-indicator hidden flex items-center bg-orange-100 text-orange-800 px-4 py-2 rounded-lg">
-              <i class="fas fa-wifi-slash mr-2"></i>
-              <span class="text-sm font-medium">Offline Mode - Limited functionality</span>
-            </div>
-            
-            <!-- Sync Status -->
-            <div id="sync-status" class="text-sm text-gray-600 flex items-center">
-              <i class="fas fa-sync text-green-500 mr-1"></i>
-              <span>Last sync: Loading...</span>
+          <!-- Offline Banner (hidden by default) -->
+          <div id="offline-banner" class="hidden mt-4 p-3 rounded-lg bg-orange-50 border border-orange-200">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-wifi-slash text-orange-600"></i>
+              <span class="text-sm font-medium text-orange-800">You're offline - Some features may be limited</span>
             </div>
           </div>
         </div>
@@ -1161,8 +1197,8 @@
     </section>
 
     <!-- Tools Section -->
-    <section id="tools" class="py-16" style="background-color: var(--bg-primary);">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="tools" class="py-10" style="background-color: var(--bg-primary);">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <main id="main-content">
           <!-- AI Tools will be loaded here -->
         </main>
@@ -1170,8 +1206,8 @@
     </section>
 
     <!-- Contributors Section -->
-    <section id="contributors" class="py-16" style="background-color: var(--bg-secondary);">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contributors" class="py-10" style="background-color: var(--bg-secondary);">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Repo states -->
          
         <div class="flex justify-center items-center flex-col mb-6">
@@ -1214,24 +1250,23 @@
         </div>
 
         <!-- Header -->
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">
             Our Contributors
           </h2>
-          <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
+          <p class="max-w-xl mx-auto text-sm" style="color: var(--text-secondary);">
             Meet the
             <span
               id="total-contributors-text"
               class="text-blue-600 font-semibold"
               >11</span
             >
-            amazing people who help maintain and grow this collection of AI
-            tools.
+            amazing people who help maintain and grow this collection of AI tools.
           </p>
         </div>
 
         <!-- Contributors Grid -->
-        <div id="contributors-modern-grid" class="contributors-grid mb-16">
+        <div id="contributors-modern-grid" class="contributors-grid mb-10">
           <!-- Contributors will be loaded here -->
         </div>
 
@@ -1267,22 +1302,22 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16" style="background-color: var(--bg-primary);">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">About</h2>
-          <p class="max-w-2xl mx-auto" style="color: var(--text-secondary);">
+    <section id="about" class="py-10" style="background-color: var(--bg-primary);">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">About</h2>
+          <p class="max-w-xl mx-auto text-sm" style="color: var(--text-secondary);">
             Learn more about the creator and the community behind this project.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <!-- Left Column - Created by -->
-          <div class="rounded-2xl shadow-lg p-8" style="background-color: var(--card-bg);">
-            <div class="text-center mb-6">
-              <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">Created by</h3>
+          <div class="rounded-2xl shadow-lg p-6" style="background-color: var(--card-bg);">
+            <div class="text-center mb-4">
+              <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Created by</h3>
             </div>
-            <div class="flex flex-col items-center space-y-6">
+            <div class="flex flex-col items-center space-y-4">
               <img
                 src="https://www.arshdeepsingh.info/images/arshdeep-singh.png"
                 alt="Arshdeep Singh"
@@ -1337,11 +1372,11 @@
           </div>
 
           <!-- Right Column - Community -->
-          <div class="rounded-2xl shadow-lg p-8" style="background-color: var(--card-bg);">
-            <div class="text-center mb-6">
-              <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">Community</h3>
+          <div class="rounded-2xl shadow-lg p-6" style="background-color: var(--card-bg);">
+            <div class="text-center mb-4">
+              <h3 class="text-xl font-bold mb-2" style="color: var(--text-primary);">Community</h3>
             </div>
-            <div class="flex flex-col items-center space-y-6">
+            <div class="flex flex-col items-center space-y-4">
               <img
                 src="https://json.commudle.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBLy9YQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--0f09813e6aa3dc3e732cca755614d3bbadd5bf5f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKQUFXa0NRQUU2QzJ4dllXUmxjbnNHT2dsd1lXZGxNQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--e1b8c3103b542b9d7ba47b2862e0d51860fbef22/Screenshot%202025-08-15%20114940.png"
                 alt="Meerut Coders Community"
@@ -1392,7 +1427,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="col-span-1 md:col-span-2">
@@ -1492,11 +1527,22 @@
 
     </footer>
     
-    <!-- PWA Install Button (hidden by default, shown when installable) -->
-    <button id="pwa-install-btn" class="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition-colors z-50 flex items-center space-x-2 hidden">
-      <i class="fas fa-download"></i>
-      <span>Install App</span>
-    </button>
+    <!-- Status Widget -->
+    <div id="status-widget" class="fixed bottom-4 left-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-3 z-40 transition-all duration-300" style="background-color: var(--card-bg); border-color: var(--border-color);">
+      <div class="flex items-center gap-3 text-sm">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse" id="status-dot"></div>
+          <span style="color: var(--text-secondary);" id="status-text">Online</span>
+        </div>
+        <div class="text-xs" style="color: var(--text-tertiary);" id="tools-count">Loading...</div>
+        <button id="pwa-install-btn" class="hidden w-6 h-6 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center justify-center text-xs relative group" title="Install App">
+          <i class="fas fa-download"></i>
+          <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Install App
+          </div>
+        </button>
+      </div>
+    </div>
     
     <script src="script.js"></script>
   </body>

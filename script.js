@@ -313,6 +313,12 @@ function updateStats(categories) {
   if (totalToolsElement) {
     totalToolsElement.textContent = totalTools + "+";
   }
+  
+  // Update tools count in status widget
+  const toolsCountElement = document.getElementById("tools-count");
+  if (toolsCountElement) {
+    toolsCountElement.textContent = `${totalTools} tools`;
+  }
 }
 
 function updateContributorStats(count) {
@@ -841,42 +847,38 @@ class PWAManager {
 
   // Update connection status in UI
   updateConnectionStatus() {
-    const statusIndicators = document.querySelectorAll('.connection-status');
-    const offlineIndicators = document.querySelectorAll('.offline-indicator');
+    // Update floating status widget
+    const statusWidget = document.getElementById('status-widget');
+    const statusDot = document.getElementById('status-dot');
+    const statusText = document.getElementById('status-text');
     
-    statusIndicators.forEach(indicator => {
+    if (statusWidget && statusDot && statusText) {
       if (this.isOnline) {
-        indicator.innerHTML = '<i class="fas fa-wifi text-green-500 mr-2"></i>Online';
-        indicator.className = 'connection-status text-green-600 text-sm';
+        statusWidget.classList.remove('offline');
+        statusDot.className = 'w-2 h-2 rounded-full bg-green-500 animate-pulse';
+        statusText.textContent = 'Online';
       } else {
-        indicator.innerHTML = '<i class="fas fa-wifi-slash text-orange-500 mr-2"></i>Offline';
-        indicator.className = 'connection-status text-orange-600 text-sm';
+        statusWidget.classList.add('offline');
+        statusDot.className = 'w-2 h-2 rounded-full bg-orange-500 animate-pulse';
+        statusText.textContent = 'Offline';
       }
-    });
+    }
 
-    // Show/hide offline indicators
-    offlineIndicators.forEach(indicator => {
+    // Show/hide offline banner
+    const offlineBanner = document.getElementById('offline-banner');
+    if (offlineBanner) {
       if (this.isOnline) {
-        indicator.classList.add('hidden');
+        offlineBanner.classList.add('hidden');
       } else {
-        indicator.classList.remove('hidden');
+        offlineBanner.classList.remove('hidden');
       }
-    });
-
-    // Update sync status
-    this.updateSyncStatus();
+    }
   }
 
   // Update sync status display
   updateSyncStatus() {
-    const syncStatus = document.getElementById('sync-status');
-    if (syncStatus) {
-      if (this.isOnline) {
-        syncStatus.innerHTML = `<i class="fas fa-sync text-green-500 mr-1"></i>Last sync: ${this.lastSyncTime}`;
-      } else {
-        syncStatus.innerHTML = `<i class="fas fa-sync-alt text-orange-500 mr-1"></i>Offline - Last sync: ${this.lastSyncTime}`;
-      }
-    }
+    // Sync status is now handled by the connection status
+    // No separate sync display needed in the minimal design
   }
 
   // Load cached data when offline
