@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Primary Meta Tags -->
     <title>AI Tools Hub - Professional AI Tools Directory</title>
     <meta
@@ -218,6 +218,8 @@
         --button-bg: #1f2937;
         --button-text: #ffffff;
         --button-hover: #111827;
+        --accent-color: #6c63ff; 
+        --accent-hover: #4f46e5; 
       }
 
       [data-theme="dark"] {
@@ -829,6 +831,67 @@
           font-size: 16px;
         }
       }
+
+      /* Theme Toggle Button Styling */
+      .theme-toggle-button {
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        border: 2px solid var(--border-color);
+        background-color: var(--card-bg);
+        color: var(--text-primary);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        margin: 0 8px;
+        margin-right: 12px;
+      }
+
+      @media (min-width: 900px) {
+        .theme-toggle-button {
+          margin-right: 0px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .theme-toggle-button {
+          margin-right: 0px;
+        }
+      }
+
+      .theme-toggle-button:hover {
+        background-color: var(--bg-tertiary);
+        border-color: #3b82f6;
+        color: #3b82f6;
+        transform: scale(1.05);
+      }
+
+      .theme-toggle-button:active {
+        transform: scale(0.95);
+      }
+
+      #theme-icon {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      @media (max-width: 640px) {
+        .theme-toggle-button {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+          margin: 0 4px;
+          margin-right: 30px;
+        }
+      }
+
+      @media (max-width: 350px) {
+        .theme-toggle-button {
+          margin-right: 50px;
+        }
+      }
     </style>
     
     <!-- Early theme boot to avoid flash of wrong theme -->
@@ -856,6 +919,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
+          <a href="index.html">
           <div class="flex items-center space-x-3">
             <div
               class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center"
@@ -867,34 +931,38 @@
               <p class="text-xs" style="color: var(--text-tertiary);">Professional Directory</p>
             </div>
           </div>
+          </a>
 
           <!-- Navigation Links -->
           <div class="hidden lg:flex items-center space-x-8">
             <a
               href="#tools"
-              class="font-medium transition-colors hover:text-blue-600"
-              style="color: var(--text-secondary);"
+               class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]"
               >Tools</a
             >
             <a
               href="#categories"
-              class="font-medium transition-colors hover:text-blue-600"
-              style="color: var(--text-secondary);"
+               class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]"
               >Categories</a
             >
             <a
               href="#contributors"
-              class="font-medium transition-colors hover:text-blue-600"
-              style="color: var(--text-secondary);"
+               class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]"
               >Contributors</a
             >
             <a
               href="#about"
-              class="font-medium transition-colors hover:text-blue-600"
-              style="color: var(--text-secondary);"
+               class="font-medium transition-colors duration-300 text-[var(--text-secondary)] hover:text-[var(--accent-color)]"
               >About</a
             >
           </div>
+
+      <!-- Theme Toggle Button -->
+      <div class="flex items-center">
+        <button id="theme-toggle-btn" class="theme-toggle-button" aria-label="Toggle dark mode" title="Toggle theme">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+      </div>
 
       <!-- GitHub Star Button -->
       <a href="https://github.com/ArshdeepGrover/ai-tools-manager" target="_blank" 
@@ -1096,29 +1164,35 @@
             </h2>
           </div>
           <div>
-            <div class="flex flex-col md:flex-row gap-8 p-4 justify-center item-center px-10 py-6 rounded-2xl shadow-lg border border-gray-700">
+            <div class="flex flex-row gap-2 md:gap-8 p-4 justify-center item-center px-4 md:px-10 py-6 rounded-2xl shadow-lg border border-gray-700">
               <!-- stars count -->
               <div class="flex items-center space-x-2 text-gray-400 rounded-xl shadow-lg border border-yellow-700 p-2">
                 <i class="fas fa-star text-yellow-400"></i>
-                <span class="text-lg">Stars:</span>
+                <span class="text-lg hidden md:inline">Stars:</span>
                 <span class="font-bold text-white" id="footer-star-count">-</span>
               </div>
               <!-- forks count -->
               <div class="flex items-center space-x-2 text-gray-400 rounded-xl shadow-lg border border-blue-700 p-2">
                 <i class="fas fa-code-branch text-blue-400"></i>
-                <span class="text-lg">Forks:</span>
+                <span class="text-lg hidden md:inline">Forks:</span>
                 <span class="font-bold text-white" id="footer-fork-count">-</span>
               </div> 
               <!-- issues -->
-              <div class="flex items-center space-x-2 text-gray-400 rounded-xl shadow-lg border border-blue-700 p-2">
+              <div class="flex items-center space-x-2 text-gray-400 rounded-xl shadow-lg border border-red-700 p-2">
                 <i class="fa-solid fa-circle-exclamation text-red-400 "></i>
-                <span class="text-lg">Issue's:</span>
+                <span class="text-lg hidden md:inline">Issues:</span>
                 <span class="font-bold text-white" id="footer-issue-count">-</span>
+              </div>
+              <!-- contributors count -->
+              <div class="flex items-center space-x-2 text-gray-400 rounded-xl shadow-lg border border-green-700 p-2">
+                <i class="fas fa-users text-green-400"></i>
+                <span class="text-lg hidden md:inline">Contributors:</span>
+                <span class="font-bold text-white" id="footer-contributors-count">-</span>
               </div>
             </div> 
           </div>
         </div>
-        
+
         <!-- Header -->
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold mb-4" style="color: var(--text-primary);">
@@ -1379,20 +1453,9 @@
           </div>
         </div>
 
-        <!-- GitHub Stats -->
+
         <div class="border-t border-gray-800 mt-8 pt-8">
-          <div class="flex justify-center items-center space-x-8 mb-6">
-            <div class="flex items-center space-x-2 text-gray-400">
-              <i class="fas fa-star text-yellow-400"></i>
-              <span class="text-sm">Stars:</span>
-              <span class="font-bold text-white" id="footer-star-count">-</span>
-            </div>
-            <div class="flex items-center space-x-2 text-gray-400">
-              <i class="fas fa-code-branch text-blue-400"></i>
-              <span class="text-sm">Forks:</span>
-              <span class="font-bold text-white" id="footer-fork-count">-</span>
-            </div>
-          </div>
+        
           <div class="text-center text-gray-400">
             <p>
               &copy; 2025 AI Tools Hub. Open source project by Arshdeep Singh.

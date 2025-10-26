@@ -1,3 +1,32 @@
+<h1 align="center">
+  AI Tools Collection - Open Source
+</h1>
+
+<table align="center">
+    <thead align="center">
+        <tr>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Closed PRs</b></td>
+            <td><b>🛠️ Languages</b></td>
+            <td><b>👥 Contributors</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/ArshdeepGrover/ai-tools-manager?style=flat&logo=github"/></td>
+            <td><img alt="Forks" src="https://img.shields.io/github/forks/ArshdeepGrover/ai-tools-manager?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/ArshdeepGrover/ai-tools-manager?style=flat&logo=github"/></td>
+            <td><img alt="Open PRs" src="https://img.shields.io/github/issues-pr/ArshdeepGrover/ai-tools-manager?style=flat&logo=github"/></td>
+            <td><img alt="Closed PRs" src="https://img.shields.io/github/issues-pr-closed/ArshdeepGrover/ai-tools-manager?style=flat&color=critical&logo=github"/></td>
+            <td><img alt="Languages Count" src="https://img.shields.io/github/languages/count/ArshdeepGrover/ai-tools-manager?style=flat&color=green&logo=github"></td>
+            <td><img alt="Contributors Count" src="https://img.shields.io/github/contributors/ArshdeepGrover/ai-tools-manager?style=flat&color=blue&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+
 # 🎁 AI Tools Collection - Open Source
 
 A curated collection of powerful AI tools, maintained by the community. This project welcomes contributions from developers worldwide to help build the most comprehensive AI tools directory.
@@ -42,7 +71,7 @@ We welcome contributions from everyone! Here's how you can help improve this pro
    cd ai-tools-manager
    ```
 
-3. **Add your tool to `links.json`**
+3. **Add your tool to `data/links.json`**
    - Find the appropriate category or create a new one
    - Add your tool following this format:
 
@@ -70,7 +99,7 @@ We welcome contributions from everyone! Here's how you can help improve this pro
 
 When you contribute, add yourself to the contributors list:
 
-1. **Add your information to `contributors.json`**:
+1. **Add your information to `data/contributors.json`**:
 
    ```json
    {
@@ -91,25 +120,27 @@ ai-tools-collection/
 ├── index.html              # Main HTML file
 ├── style.css               # Styling and animations
 ├── script.js               # JavaScript functionality
-├── links.json              # AI tools database
-├── contributors.json       # Contributors database
 ├── manifest.json           # PWA manifest
 ├── package.json            # Project configuration
 ├── README.md               # This file
-├── CONTRIBUTING.md         # Contribution guidelines
-├── COMMIT_GUIDELINES.md    # Commit message standards
-├── CONTRIBUTOR_EXAMPLE.md  # Contributor profile template
+├── data/                   # Data files
+│   ├── links.json          # AI tools database
+│   └── contributors.json   # Contributors database
+├── docs/                   # Documentation
+│   ├── CONTRIBUTING.md     # Contribution guidelines
+│   ├── COMMIT_GUIDELINES.md # Commit message standards
+│   └── CONTRIBUTOR_EXAMPLE.md # Contributor profile template
+├── scripts/                # Validation scripts
+│   ├── validate-links.js   # Links validation
+│   └── validate-contributors.js # Contributors validation
 ├── assets/                 # Project assets
 │   ├── favicon.svg         # Site favicon
 │   ├── og-image.svg        # Social media image
 │   └── README.md           # Assets documentation
-├── src/                    # Source files
-│   ├── assets/             # Additional assets
-│   ├── scripts/            # JavaScript modules
-│   └── templates/          # HTML templates
-└── tests/                  # Test files
-    ├── integration/        # Integration tests
-    └── unit/               # Unit tests
+└── .github/                # GitHub configuration
+    ├── workflows/          # CI/CD workflows
+    ├── ISSUE_TEMPLATE/     # Issue templates
+    └── hooks/              # Git hooks
 ```
 
 ## 🛠️ Development Setup
@@ -135,6 +166,9 @@ ai-tools-collection/
    
    # Validate all links and data
    npm run validate
+   
+   # Validate contributors data
+   npm run validate-contributors
    ```
 
 4. **Open in your browser**
@@ -153,8 +187,8 @@ ai-tools-collection/
    ```
 
 5. **Make your changes**
-   - Edit `links.json` to add/modify tools
-   - Update `contributors.json` to add yourself
+   - Edit `data/links.json` to add/modify tools
+   - Update `data/contributors.json` to add yourself
    - Modify CSS/JS as needed
 
 ## 🔧 Validation & Quality Assurance
