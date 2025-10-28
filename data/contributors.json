@@ -399,8 +399,8 @@
     },
     {
       "name": "Abhigya Sharma",
-      "github": "abhigya-sharma",
-      "avatar": "https://github.com/abhigya-sharma.png",
+      "github": "abhigyaabs2",
+      "avatar": "https://avatars.githubusercontent.com/u/142334571?v=4",
       "tagline": "Developer",
       "contributions": ["Updated script.js functionality"],
       "role": "Contributor",
@@ -408,8 +408,8 @@
     },
     {
       "name": "Arushi Waddepalli",
-      "github": "arushi-waddepalli",
-      "avatar": "https://github.com/arushi-waddepalli.png",
+      "github": "arushi2702",
+      "avatar": "https://avatars.githubusercontent.com/u/183184065?v=4",
       "tagline": "UI/UX Developer",
       "contributions": ["Fixed design inconsistencies across the website"],
       "role": "Contributor",
@@ -432,14 +432,6 @@
       "role": "Contributor"
     },
     {
-      "name": "Jaydeep Rawat",
-      "github": "jaydeep-rawat",
-      "avatar": "https://github.com/jaydeep-rawat.png",
-      "tagline": "AI Tools Contributor",
-      "contributions": ["Added Vmaker AI tool to the collection"],
-      "role": "Contributor"
-    },
-    {
       "name": "Shivani Prajapati",
       "github": "shivani-prajapati",
       "avatar": "https://github.com/shivani-prajapati.png",
@@ -452,8 +444,8 @@
     },
     {
       "name": "Vanshika Khator",
-      "github": "vanshika-khator",
-      "avatar": "https://github.com/vanshika-khator.png",
+      "github": "vanshikakhator",
+      "avatar": "https://avatars.githubusercontent.com/u/170328755?v=4",
       "tagline": "Frontend Developer",
       "contributions": [
         "Improved navbar layout for mobile and tablet versions",
